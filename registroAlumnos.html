@@ -21,36 +21,65 @@
         <div class="contenedorMain">
             <h2> Registro de alumnos </h2>
             <div class="contenedorPrincipal">
-                <h3> Nombre </h3>
-                <input type="text">
-                <h3> Fecha de nacimiento</h3>
-                <input type="date">
-                <h3> Edad </h3>
-                <input type="text">
-                <h3> Ocupacion </h3>
-                <input type="text">
-                <h3>Estado civil </h3>
-                <label for="opcion"></label>
-                <select name="opcion" id="opcion">
-                    <option value="1">Soltero(a)</option>
-                    <option value="2">Casado(a)</option>
-                    <option value="3">Alejado(a)</option>
-                    <option value="4">Otro</option>
-                </select>
-                <h3> Fecha de ingreso </h3>
-                <input type="date">
-                <h3> Grado actual</h3>
-                <input type="text">
-                <h3> Grado a seguir</h3>
-                <input type="text">
-                <H3> Telefono tutor</H3>
-                <input type="text">
-                <h3> Correo tutor </h3>
-                <input type="email">
-
-                <input type="submit" name="" id="botonEnviar">
+                <div class="subConIzq">
+                    <h3> Nombre </h3>
+                    <input type="text">
+                    <h3> Fecha de nacimiento</h3>
+                    <input type="date">
+                    <h3> Edad </h3>
+                    <input type="text">
+                    <h3> Ocupacion </h3>
+                    <input type="text">
+                    <h3>Estado civil </h3>
+                    <select name="opcionEstado" id="opcionEstado">
+                        <option value="1">Soltero(a)</option>
+                        <option value="2">Casado(a)</option>
+                        <option value="3">Alejado(a)</option>
+                        <option value="4">Otro</option>
+                    </select>
+                </div>
+                <div class="subConMedio">
+                    <h3> Fecha de ingreso </h3>
+                    <input type="date">
+                    <h3> Grado actual</h3>
+                        <select name="opcionCinta" id="opcionCinta">
+                        <option value="1">10 Gup</option>
+                        <option value="2">9 Gup</option>
+                        <option value="3">8 Gup</option>
+                        <option value="4">7 Gup</option>
+                        <option value="5">6 Gup</option>
+                        <option value="6">5 Gup</option>
+                        <option value="7">4 Gup</option>
+                        <option value="8">3 Gup</option>
+                        <option value="9">2 Gup</option>
+                        <option value="10">1 Gup</option>
+                    </select>                    
+                    <h3> Grado a seguir</h3>
+                    <select name="sigCinta" id="sigCinta">
+                        <option value="1">10 Gup</option>
+                        <option value="2">9 Gup</option>
+                        <option value="3">8 Gup</option>
+                        <option value="4">7 Gup</option>
+                        <option value="5">6 Gup</option>
+                        <option value="6">5 Gup</option>
+                        <option value="7">4 Gup</option>
+                        <option value="8">3 Gup</option>
+                        <option value="9">2 Gup</option>
+                        <option value="10">1 Gup</option>
+                    </select> 
+                </div>
+                <div class="subConDer">
+                    <H3> Telefono tutor</H3>
+                    <input type="text">
+                    <h3> Correo tutor </h3>
+                    <input type="email">
+                </div>
+                <div>
+                    <input type="submit" name="" id="botonEnviar">
+                </div>
             </div>
     </main>
     
+    <script src="registroAlumnos.js"></script>
 </body>
 </html>
