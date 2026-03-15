@@ -1,0 +1,16 @@
+.div-query{
+    display:flex;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    padding: 1.5rem;
+}
+
+.query-input{
+    display:flex;
+}
+
+.query-input button{
+    margin-left: 10px;
+    padding:10px;
+}
+

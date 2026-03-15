@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-    <header>
-        <h1> PAGINA PRINCIPAL </h1>
-        <a href="login.html"> Iniciar sesion </a>
-        <a href="registroAlumnos.html"> Registrarse </a>
-        <a href="menu.html">Menu</a>
-        <a href="consultar_alumnos.html">Consultas</a>
-    </header>
+   <div id="menu"></div>
+
+   <script>
+    fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("menu").innerHTML = data;
+    });
+    </script>
+
     <main>
         <h3> Señor Miyagi</h3>
         <h4> 私の道場へようこそ </h4>

@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <title>Consulta - Sistema Taekwondo</title>
     <link rel="stylesheet" href="css/consultar_alumnos.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body>
-    <header>
+    <div id="menu"></div>
+   
+    <div class="div-query">
+        <h1>Consulta de alumnos</h1>
+        <div class="query-input">
+            <input type="text" placeholder="Buscar alumno..." id="query">
+            <button class="button-search">buscar</button>
+        </div>
+    </div>
 
-    </header>
+    <script>
+    fetch("menu.html")
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById("menu").innerHTML = data;
+    });
+    </script>
+
 </body>
 </html>
