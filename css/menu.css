@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.header{
+    background-color:#002B5B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.logo img{
+    width:80px;
+    height: 80px;
+}
+
+.nav-menu ul{
+    display: flex;
+    margin-right: 1.5rem;
+}
+
+.nav-menu li{
+    margin-right: 1.5rem;
+}
+
+a, li{
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    text-decoration: none;
+}
