@@ -14,3 +14,30 @@
     padding:10px;
 }
 
+.query-tables{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.tabla-alumnos{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabla-alumnos th{
+    background:#1f4e79;
+    color:white;
+    padding:10px;
+    text-align:left;
+}
+
+.tabla-alumnos td{
+    padding:10px;
+    border-bottom:1px solid #ccc;
+    background-color:#ffffff;
+}
+
+.tabla-alumnos tr:hover{
+    background:#f2f2f2;
+}
