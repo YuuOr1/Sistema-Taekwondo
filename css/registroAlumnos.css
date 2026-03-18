@@ -1,87 +1,114 @@
-body{
+* {
+    box-sizing: border-box;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
 }
 
-header{
-    background-color: #03409C;
-    color: rgb(241, 241, 186);
-    font: bold;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: flex;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    padding-left: 28px;
-    padding: 25px 25px; 
-}
-
-.contenedorHeader{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 300px;
-}
-
-main{
-    border-radius: 10px;
-    padding: 20px;
-    background-color: rgb(248, 245, 245);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
     min-height: 100vh;
 }
 
-main h2{
-    color: black;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+header {
+    background: #002B5B;
+    color: white;
+    padding: 20px 60px;
 }
 
-.img_logo{
-    width: 100px;
-    height: 100px;
-}
-
-.contenedorMain{
-    color: blue;
-}
-
-.contenedorPrincipal{
-    text-align: center;
-    background-color: white;
-    color: black;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 15px;
-    padding: 30px 30px;
+.contenedorHeader {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
-    margin-top: 50vh;
 }
 
-.subConIzq{
-    width: 30%;
+.contenedorHeader h1 {
+    font-size: 22px;
 }
 
-.subConMedio{
-    width: 30%;
+.img_logo {
+    width: 60px;
 }
 
-.subConDer{
-    width: 30%;
-
+main {
+    padding: 50px 60px;
 }
 
-.contenedorPrincipal > div:last-child{
+.contenedorMain h2 {
+    color: #002B5B;
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-left: 5px solid #FFD60A;
+    padding-left: 15px;
+}
+
+.contenedorPrincipal {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.subConIzq,
+.subConMedio,
+.subConDer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+h3 {
+    color: #002B5B;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f9f9f9;
+    transition: border-color 0.2s;
     width: 100%;
 }
 
-#botonEnviar{
-    display: block;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    margin: auto;
-    margin-top: 20px;
-    padding: 10px 15px 10px 15px;
-    border-radius: 8px;
-    background-color: rgb(220, 214, 214);
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: #002B5B;
+    background: white;
+}
+
+.contenedorPrincipal > div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+input[type="submit"] {
+    background: #C1121F;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background: #a00e19;
 }
