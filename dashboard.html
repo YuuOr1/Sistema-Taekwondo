@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Principal - Sistema Taekwondo</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" class="logo">
+            <div>
+                <h1>Sistema Integral de Gestión</h1>
+                <p>Instituto Mexicano Moo Pal Kwan</p>
+            </div>
+        </div>
+        <nav>
+            <a href="inicio.html">Inicio</a>
+            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <section class="welcome">
+        <h2>Bienvenido al Panel de Control</h2>
+        <p>Selecciona un módulo para comenzar</p>
+    </section>
+
+    <section class="modules">
+
+        <a href="consultar_alumnos.html" class="module-card alumnos">
+            <div class="module-icon">🥋</div>
+            <h3>Alumnos</h3>
+            <p>Consulta, registra y gestiona la información de todos los alumnos del instituto.</p>
+            <span class="module-arrow">→</span>
+        </a>
+
+        <div class="module-card examenes disabled">
+            <div class="module-icon">📋</div>
+            <h3>Exámenes</h3>
+            <p>Administra los exámenes de grado y controla qué alumnos aplicarán próximamente.</p>
+            <span class="badge-pronto">Próximamente</span>
+        </div>
+
+        <div class="module-card pagos disabled">
+            <div class="module-icon">💳</div>
+            <h3>Pagos</h3>
+            <p>Controla las cuotas mensuales y pagos de inscripción de forma rápida y organizada.</p>
+            <span class="badge-pronto">Próximamente</span>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
+    </footer>
+
+</body>
+</html>

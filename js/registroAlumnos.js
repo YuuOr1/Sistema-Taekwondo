@@ -1,6 +1,13 @@
-let botonEnviar = document.getElementById("botonEnviar")
+const botonEnviar = document.getElementById("botonEnviar");
 
+botonEnviar.addEventListener("click", function () {
+    const nombre = document.getElementById("nombre").value.trim();
 
-botonEnviar.addEventListener("click", function(){
-    alert("Alumno registrado exitosamente")
-})
+    if (!nombre) {
+        alert("Por favor ingresa el nombre del alumno.");
+        return;
+    }
+
+    alert("✔ Alumno registrado exitosamente");
+    window.location.href = "consultar_alumnos.html";
+});

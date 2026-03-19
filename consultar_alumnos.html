@@ -2,55 +2,73 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Consulta - Sistema Taekwondo</title>
+    <title>Consulta de Alumnos - Sistema Taekwondo</title>
     <link rel="stylesheet" href="css/consultar_alumnos.css">
-    <link rel="stylesheet" href="css/menu.css">
+
 </head>
 
 <body>
-    <div id="menu"></div>
-
-    <div class="div-query">
-        <h1>Consulta de alumnos</h1>
-        <div class="query-input">
-            <input type="text" placeholder="Buscar alumno..." id="query">
-            <button class="button-search">buscar</button>
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" class="logo">
+            <div>
+                <h1>Sistema Integral de Gestión</h1>
+                <p>Instituto Mexicano Moo Pal Kwan</p>
+            </div>
         </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="inicio.html">Inicio</a>
+            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+
+        <div class="page-title-row">
+            <div>
+                <h2>Consulta de Alumnos</h2>
+                <p class="subtitle">Gestiona el registro completo de alumnos del instituto</p>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="search-group">
+                <input type="text" placeholder="🔍  Buscar alumno..." id="query">
+                <button class="btn-search">Buscar</button>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-edit">✏️ Editar alumno</button>
+                <button class="btn-register" onclick="window.location.href='registroAlumnos.html'">＋ Registrar alumno</button>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="tabla-alumnos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>F. Nacimiento</th>
+                        <th>Edad</th>
+                        <th>F. Ingreso</th>
+                        <th>F. Últ. Examen</th>
+                        <th>Cinta Actual</th>
+                        <th>Próx. Cinta</th>
+                        <th>Empresa</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-resultados">
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
-    <script>
-    fetch("menu.html")
-        .then(response => response.text())
-        .then(data => {
-        document.getElementById("menu").innerHTML = data;
-    });
-    </script>
-
-<div class="query-tables">
-
-    <table class="tabla-alumnos">
-
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>F. Nacimiento</th>
-                <th>Edad</th>
-                <th>F. ingreso</th>
-                <th>F. Exa. Ant.</th>
-                <th>Cinta</th>
-                <th>Prox. Cinta</th>
-                <th>Empresa</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-
-        <tbody id="tabla-resultados">
-        </tbody>
-
-    </table>
-
-</div>
+    <footer>
+        <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
+    </footer>
 
     <script src="js/consultar_alumnos.js"></script>
 </body>

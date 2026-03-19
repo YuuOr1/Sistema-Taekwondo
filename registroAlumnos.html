@@ -1,88 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/registroAlumnos.css">
-<title>Moo Pal Kwan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Alumno - Sistema Taekwondo</title>
+    <link rel="stylesheet" href="css/registroAlumnos.css">
 </head>
+
 <body>
-<header>
-    <div class="contenedorHeader">
-        <h1>Instituto Mexicano M.P.K TAE KWON DO</h1>
-        <div class="logo">
-            <img class="img_logo" src="./img/logo.png">
-        </div>
-    </div>
-</header>
-<main>
-    <div class="contenedorMain">
-        <h2>Registro de alumnos</h2>
-        <div class="contenedorPrincipal">
 
-            <div class="subConIzq">
-                <h3>Nombre</h3>
-                <input type="text" placeholder="Nombre completo">
-                <h3>Fecha de nacimiento</h3>
-                <input type="date">
-                <h3>Edad</h3>
-                <input type="text" placeholder="Edad">
-                <h3>Ocupación</h3>
-                <input type="text" placeholder="Ocupación">
-                <h3>Estado civil</h3>
-                <select name="opcionEstado" id="opcionEstado">
-                    <option value="1">Soltero(a)</option>
-                    <option value="2">Casado(a)</option>
-                    <option value="3">Divorciado(a)</option>
-                    <option value="4">Otro</option>
-                </select>
-            </div>
-
-            <div class="subConMedio">
-                <h3>Fecha de ingreso</h3>
-                <input type="date">
-                <h3>Grado actual</h3>
-                <select name="opcionCinta" id="opcionCinta">
-                    <option value="1">10 Gup</option>
-                    <option value="2">9 Gup</option>
-                    <option value="3">8 Gup</option>
-                    <option value="4">7 Gup</option>
-                    <option value="5">6 Gup</option>
-                    <option value="6">5 Gup</option>
-                    <option value="7">4 Gup</option>
-                    <option value="8">3 Gup</option>
-                    <option value="9">2 Gup</option>
-                    <option value="10">1 Gup</option>
-                </select>
-                <h3>Grado a seguir</h3>
-                <select name="sigCinta" id="sigCinta">
-                    <option value="1">10 Gup</option>
-                    <option value="2">9 Gup</option>
-                    <option value="3">8 Gup</option>
-                    <option value="4">7 Gup</option>
-                    <option value="5">6 Gup</option>
-                    <option value="6">5 Gup</option>
-                    <option value="7">4 Gup</option>
-                    <option value="8">3 Gup</option>
-                    <option value="9">2 Gup</option>
-                    <option value="10">1 Gup</option>
-                </select>
-            </div>
-
-            <div class="subConDer">
-                <h3>Teléfono tutor</h3>
-                <input type="text" placeholder="Número de teléfono">
-                <h3>Correo tutor</h3>
-                <input type="email" placeholder="correo@ejemplo.com">
-            </div>
-
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" class="logo">
             <div>
-                <input type="submit" value="Registrar alumno" id="botonEnviar">
+                <h1>Sistema Integral de Gestión</h1>
+                <p>Instituto Mexicano Moo Pal Kwan</p>
+            </div>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="consultar_alumnos.html">Alumnos</a>
+            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+
+        <div class="page-title-row">
+            <div>
+                <h2>Registrar Nuevo Alumno</h2>
+                <p class="subtitle">Completa el formulario con la información del alumno</p>
+            </div>
+            <a href="consultar_alumnos.html" class="btn-back">← Volver a alumnos</a>
+        </div>
+
+        <div class="form-card">
+
+            <div class="form-section">
+                <h3 class="section-title">Información personal</h3>
+                <div class="fields-grid">
+                    <div class="field-group span-2">
+                        <label>Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Ej. Juan Carlos Pérez López">
+                    </div>
+                    <div class="field-group">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" id="fechaNac">
+                    </div>
+                    <div class="field-group">
+                        <label>Edad</label>
+                        <input type="number" id="edad" placeholder="Ej. 14" min="3" max="99">
+                    </div>
+                    <div class="field-group">
+                        <label>Ocupación</label>
+                        <input type="text" id="ocupacion" placeholder="Ej. Estudiante">
+                    </div>
+                    <div class="field-group">
+                        <label>Estado civil</label>
+                        <select id="opcionEstado">
+                            <option value="">Seleccionar...</option>
+                            <option value="1">Soltero(a)</option>
+                            <option value="2">Casado(a)</option>
+                            <option value="3">Divorciado(a)</option>
+                            <option value="4">Otro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-section">
+                <h3 class="section-title">Información de Taekwondo</h3>
+                <div class="fields-grid">
+                    <div class="field-group">
+                        <label>Fecha de ingreso</label>
+                        <input type="date" id="fechaIngreso">
+                    </div>
+                    <div class="field-group">
+                        <label>Fecha último examen</label>
+                        <input type="date" id="fechaExamen">
+                    </div>
+                    <div class="field-group">
+                        <label>Grado actual (Cinta)</label>
+                        <select id="opcionCinta">
+                            <option value="">Seleccionar...</option>
+                            <option value="blanca">Blanca — 10 Gup</option>
+                            <option value="amarilla">Amarilla — 9 Gup</option>
+                            <option value="naranja">Naranja — 8 Gup</option>
+                            <option value="verde">Verde — 7 Gup</option>
+                            <option value="azul">Azul — 6 Gup</option>
+                            <option value="roja">Roja — 5 Gup</option>
+                            <option value="negra">Negra — 1-4 Dan</option>
+                        </select>
+                    </div>
+                    <div class="field-group">
+                        <label>Próximo grado</label>
+                        <select id="sigCinta">
+                            <option value="">Seleccionar...</option>
+                            <option value="blanca">Blanca — 10 Gup</option>
+                            <option value="amarilla">Amarilla — 9 Gup</option>
+                            <option value="naranja">Naranja — 8 Gup</option>
+                            <option value="verde">Verde — 7 Gup</option>
+                            <option value="azul">Azul — 6 Gup</option>
+                            <option value="roja">Roja — 5 Gup</option>
+                            <option value="negra">Negra — 1-4 Dan</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+
+            <div class="form-section">
+                <h3 class="section-title">📞 Contacto del tutor</h3>
+                <div class="fields-grid">
+                    <div class="field-group">
+                        <label>Teléfono tutor</label>
+                        <input type="tel" id="telefono" placeholder="Ej. 664 123 4567">
+                    </div>
+                    <div class="field-group">
+                        <label>Correo tutor</label>
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="field-group">
+                        <label>Empresa / Sucursal</label>
+                        <input type="text" id="empresa" placeholder="Ej. MPK">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="consultar_alumnos.html" class="btn-cancel">Cancelar</a>
+                <button id="botonEnviar" class="btn-submit">✔ Registrar alumno</button>
             </div>
 
         </div>
+
     </div>
-</main>
-<script src="js/registroAlumnos.js"></script>
+
+    <footer>
+        <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
+    </footer>
+
+    <script src="./js/registroAlumnos.js"></script>
 </body>
+
 </html>

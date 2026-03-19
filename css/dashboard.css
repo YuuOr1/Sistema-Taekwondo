@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    background: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── HEADER ── */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    background: #002B5B;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container .logo {
+    width: 60px;
+}
+
+.logo-container h1 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logo-container p {
+    font-size: 13px;
+    opacity: 0.75;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.logout-btn {
+    background: #C1121F;
+    padding: 9px 18px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #a00e19;
+}
+
+/* ── WELCOME BANNER ── */
+.welcome {
+    background: linear-gradient(135deg, #002B5B 0%, #1a4a8a 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.welcome h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.welcome p {
+    font-size: 16px;
+    opacity: 0.8;
+    position: relative;
+    margin: 0;
+}
+
+/* ── MODULE CARDS ── */
+.modules {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 60px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.module-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    padding: 40px 35px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border-top: 5px solid #ccc;
+}
+
+.module-card.alumnos {
+    border-top-color: #FFD60A;
+}
+
+.module-card.examenes {
+    border-top-color: #002B5B;
+}
+
+.module-card.pagos {
+    border-top-color: #C1121F;
+}
+
+.module-card:not(.disabled):hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+}
+
+.module-card.disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.module-icon {
+    font-size: 52px;
+    margin-bottom: 18px;
+    line-height: 1;
+}
+
+.module-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #002B5B;
+    margin-bottom: 12px;
+}
+
+.module-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    flex: 1;
+    margin: 0;
+}
+
+.module-arrow {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 22px;
+    color: #FFD60A;
+    font-weight: 900;
+    transition: transform 0.2s;
+}
+
+.module-card:hover .module-arrow {
+    transform: translateX(5px);
+}
+
+.badge-pronto {
+    display: inline-block;
+    margin-top: 20px;
+    background: #f0f0f0;
+    color: #888;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ── FOOTER ── */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #002B5B;
+    color: white;
+    font-size: 13px;
+    margin-top: auto;
+}
