@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exámenes - Sistema Taekwondo</title>
+    <link rel="stylesheet" href="css/examenes.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" class="logo">
+            <div>
+                <h1>Sistema Integral de Gestión</h1>
+                <p>Instituto Mexicano Moo Pal Kwan</p>
+            </div>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+
+        <div class="tabs">
+            <button class="tab active" data-tab="lista"> Lista de examen</button>
+            <button class="tab" data-tab="calificaciones"> Registrar calificaciones</button>
+            <button class="tab" data-tab="historial"> Historial</button>
+        </div>
+
+        <!-- ── TAB 1: LISTA DE ALUMNOS ── -->
+        <div class="tab-content active" id="tab-lista">
+            <div class="section-header">
+                <div>
+                    <h2>Alumnos para examen</h2>
+                    <p class="subtitle">Examen programado: <strong>22 Febrero 2026</strong></p>
+                </div>
+                <button class="btn-primary">＋ Agregar alumno</button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>F. Nacimiento</th>
+                            <th>Edad</th>
+                            <th>F. Ingreso</th>
+                            <th>Examen Anterior</th>
+                            <th>Grado Actual</th>
+                            <th>Grado a Subir</th>
+                            <th>Categoría</th>
+                            <th>CP / Vivos</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-lista">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── TAB 2: CALIFICACIONES ── -->
+        <div class="tab-content" id="tab-calificaciones">
+            <div class="section-header">
+                <div>
+                    <h2>Registrar calificaciones</h2>
+                    <p class="subtitle">Examen: <strong>22 Febrero 2026</strong> — Captura los resultados de cada alumno</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Grado a Subir</th>
+                            <th>Caballo</th>
+                            <th>Kicho</th>
+                            <th>Núm. Forma</th>
+                            <th>P. Defensa</th>
+                            <th>Puntuación Final</th>
+                            <th>Resultado</th>
+                            <th>Guardar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-calificaciones">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── TAB 3: HISTORIAL ── -->
+        <div class="tab-content" id="tab-historial">
+            <div class="section-header">
+                <div>
+                    <h2>Historial de exámenes</h2>
+                    <p class="subtitle">Consulta todos los exámenes registrados anteriormente</p>
+                </div>
+            </div>
+
+            <div class="historial-grid" id="historial-grid">
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
+    </footer>
+
+    <script src="js/examenes.js"></script>
+</body>
+</html>

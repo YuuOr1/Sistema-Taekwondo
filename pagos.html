@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagos - Sistema Taekwondo</title>
+    <link rel="stylesheet" href="css/pagos.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="./img/logo.png" class="logo">
+            <div>
+                <h1>Sistema Integral de Gestión</h1>
+                <p>Instituto Mexicano Moo Pal Kwan</p>
+            </div>
+        </div>
+        <nav>
+            <a href="dashboard.html">Panel</a>
+            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+
+        <!-- RESUMEN -->
+        <div class="summary-cards" id="summary-cards"></div>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <button class="tab active" data-tab="pendientes">Pagos pendientes</button>
+            <button class="tab" data-tab="colegiatura">Colegiatura mensual</button>
+            <button class="tab" data-tab="examen">Pago de examen</button>
+        </div>
+
+        <!-- ── TAB 1: PENDIENTES ── -->
+        <div class="tab-content active" id="tab-pendientes">
+            <div class="section-header">
+                <div>
+                    <h2>Alumnos con pagos pendientes</h2>
+                    <p class="subtitle">Alumnos que tienen al menos un pago vencido este mes</p>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cinta</th>
+                            <th>Concepto</th>
+                            <th>Mes / Periodo</th>
+                            <th>Monto</th>
+                            <th>Días vencido</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-pendientes"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── TAB 2: COLEGIATURA ── -->
+        <div class="tab-content" id="tab-colegiatura">
+            <div class="section-header">
+                <div>
+                    <h2>Colegiatura mensual</h2>
+                    <p class="subtitle">Registro de cuotas mensuales — <strong>Marzo 2026</strong></p>
+                </div>
+                <button class="btn-primary" id="btn-registrar-colegiatura">＋ Registrar pago</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cinta</th>
+                            <th>Monto</th>
+                            <th>Fecha de pago</th>
+                            <th>Método</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-colegiatura"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ── TAB 3: EXAMEN ── -->
+        <div class="tab-content" id="tab-examen">
+            <div class="section-header">
+                <div>
+                    <h2>Pago de inscripción al examen</h2>
+                    <p class="subtitle">Examen: <strong>22 Febrero 2026</strong></p>
+                </div>
+                <button class="btn-primary">＋ Registrar pago</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Grado a Subir</th>
+                            <th>Monto</th>
+                            <th>Fecha de pago</th>
+                            <th>Método</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-examen"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL REGISTRAR PAGO -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Registrar pago de colegiatura</h3>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="field-group">
+                    <label>Alumno</label>
+                    <select id="modal-alumno">
+                        <option value="">Seleccionar alumno...</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label>Mes</label>
+                    <select id="modal-mes">
+                        <option>Enero 2026</option>
+                        <option>Febrero 2026</option>
+                        <option selected>Marzo 2026</option>
+                        <option>Abril 2026</option>
+                    </select>
+                </div>
+                <div class="fields-row">
+                    <div class="field-group">
+                        <label>Monto ($)</label>
+                        <input type="number" id="modal-monto" placeholder="Ej. 350" value="350">
+                    </div>
+                    <div class="field-group">
+                        <label>Fecha de pago</label>
+                        <input type="date" id="modal-fecha">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <label>Método de pago</label>
+                    <select id="modal-metodo">
+                        <option>Efectivo</option>
+                        <option>Transferencia</option>
+                        <option>Tarjeta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel-modal" id="btn-cancel-modal">Cancelar</button>
+                <button class="btn-confirm" id="btn-confirm">✔ Confirmar pago</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
+    </footer>
+
+    <script src="js/pagos.js"></script>
+</body>
+</html>

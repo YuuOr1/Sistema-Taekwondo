@@ -43,8 +43,8 @@ function renderTable(lista) {
                 <td>${beltBadge(alumno.prox)}</td>
                 <td>${alumno.empresa}</td>
                 <td>
-                    <button class="btn-table btn-table-edit">✏️ Editar</button>
-                    <button class="btn-table btn-table-delete">🗑 Eliminar</button>
+                    <button class="btn-table btn-table-edit">Editar</button>
+                    <button class="btn-table btn-table-delete">Eliminar</button>
                 </td>
             </tr>
         `;
