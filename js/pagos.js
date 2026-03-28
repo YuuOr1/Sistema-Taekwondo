@@ -133,6 +133,29 @@ function renderExamen() {
     });
 }
 
+// ── TAB 4: TORNEOS ──
+function renderTorneos() {
+    const tbody = document.getElementById("tabla-torneos");
+    tbody.innerHTML = "";
+
+    examenPagos.forEach(p => {
+        tbody.innerHTML += `
+        <tr>
+            <td><strong>${p.nombre}</strong></td>
+            <td>${beltBadge(p.cinSubir)}</td>
+            <td><strong>$${p.monto}</strong></td>
+            <td>${p.fecha || "—"}</td>
+            <td>${p.metodo || "—"}</td>
+            <td>${estadoBadge(p.estado)}</td>
+            <td>
+                ${p.estado !== "pagado"
+                    ? `<button class="btn-table btn-table-pay">✔ Registrar pago</button>`
+                    : `<button class="btn-table btn-table-view">Ver detalle</button>`}
+            </td>
+        </tr>`;
+    });
+}
+
 // ── MODAL ──
 const overlay = document.getElementById("modal-overlay");
 const modalAlumno = document.getElementById("modal-alumno");
@@ -177,3 +200,4 @@ renderSummary();
 renderPendientes();
 renderColegiatura();
 renderExamen();
+renderTorneos();

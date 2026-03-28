@@ -32,6 +32,7 @@
             <button class="tab active" data-tab="pendientes">Pagos pendientes</button>
             <button class="tab" data-tab="colegiatura">Colegiatura mensual</button>
             <button class="tab" data-tab="examen">Pago de examen</button>
+            <button class="tab" data-tab="torneos">Pago de torneos</button>
         </div>
 
         <!-- ── TAB 1: PENDIENTES ── -->
@@ -114,6 +115,32 @@
             </div>
         </div>
 
+        <!-- ── TAB 3: TORNEOS ── -->
+        <div class="tab-content" id="tab-torneos">
+            <div class="section-header">
+                <div>
+                    <h2>Pago de inscripción a torneos </h2>
+                    <p class="subtitle">Torneo: <strong>22 Febrero 2026</strong></p>
+                </div>
+                <button class="btn-primary">＋ Registrar pago</button>
+            </div>
+            <div class="table-wrapper">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Grado a Subir</th>
+                            <th>Monto</th>
+                            <th>Fecha de pago</th>
+                            <th>Método</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-torneos"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <!-- MODAL REGISTRAR PAGO -->
@@ -164,6 +191,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <footer>
         <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
