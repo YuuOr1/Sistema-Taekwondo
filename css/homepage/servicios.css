@@ -1,0 +1,157 @@
+.servicios {
+	padding: 6rem 1.6rem 7rem;
+	background: linear-gradient(180deg, #151824 0%, #111522 100%);
+}
+
+.servicios__container {
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.servicios__title {
+	margin: 0 0 4rem;
+	text-align: center;
+	font-size: 5.2rem;
+	font-style: italic;
+	font-weight: 800;
+	letter-spacing: 0.25rem;
+	color: var(--blanco);
+}
+
+.servicios__layout {
+	display: grid;
+	grid-template-columns: 1fr 1.25fr;
+	gap: 3.8rem;
+	align-items: center;
+}
+
+.servicios__media {
+	margin: 0;
+	width: 100%;
+	max-width: 48rem;
+	aspect-ratio: 1 / 1;
+	border-radius: 1.4rem;
+	overflow: hidden;
+	border-right: 0.9rem solid rgba(255, 255, 255, 0.18);
+	border-bottom: 0.9rem solid rgba(255, 255, 255, 0.18);
+}
+
+.servicios__media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.servicios__cards {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.servicios__card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	min-height: 12rem;
+	padding: 2rem 2.2rem;
+	border-radius: 1.2rem;
+	background-color: rgba(255, 255, 255, 0.18);
+}
+
+.servicios__card--left {
+	flex-direction: row;
+}
+
+.servicios__card--right {
+	flex-direction: row;
+}
+
+.servicios__icon {
+	width: 8.6rem;
+	height: 8.6rem;
+	flex-shrink: 0;
+}
+
+.servicios__content {
+	flex: 1;
+}
+
+.servicios__text {
+	margin: 0;
+	font-size: 4.2rem;
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--blanco);
+}
+
+.servicios__line {
+	display: block;
+	width: 100%;
+	height: 0.2rem;
+	margin-top: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 120rem) {
+	.servicios__title {
+		font-size: 4.4rem;
+	}
+
+	.servicios__text {
+		font-size: 3.3rem;
+	}
+
+	.servicios__icon {
+		width: 7.2rem;
+		height: 7.2rem;
+	}
+}
+
+@media (max-width: 96rem) {
+	.servicios {
+		padding-top: 5rem;
+	}
+
+	.servicios__layout {
+		grid-template-columns: 1fr;
+		gap: 2.8rem;
+	}
+
+	.servicios__media {
+		max-width: 44rem;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 56rem) {
+	.servicios {
+		padding: 4rem 1.2rem 5rem;
+	}
+
+	.servicios__title {
+		margin-bottom: 3rem;
+		font-size: 3.2rem;
+		letter-spacing: 0.14rem;
+	}
+
+	.servicios__card {
+		min-height: 10.2rem;
+		gap: 1.2rem;
+		padding: 1.6rem;
+	}
+
+	.servicios__icon {
+		width: 5.6rem;
+		height: 5.6rem;
+	}
+
+	.servicios__text {
+		font-size: 2.2rem;
+	}
+
+	.servicios__line {
+		margin-top: 1rem;
+	}
+}
