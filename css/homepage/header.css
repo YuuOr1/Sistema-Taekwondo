@@ -213,10 +213,6 @@
 	background-color: var(--azulClaro);
 }
 
-body {
-	padding-top: 14rem;
-}
-
 @media (max-width: 96rem) {
 	.site-header__inner {
 		border-radius: 4rem;
@@ -240,9 +236,6 @@ body {
 		flex-shrink: 0;
 	}
 
-	body {
-		padding-top: 14rem;
-	}
 }
 
 @media (max-width: 56rem) {
@@ -301,7 +294,4 @@ body {
 		border-radius: 1rem;
 	}
 
-	body {
-		padding-top: 10rem;
-	}
 }
