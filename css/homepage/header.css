@@ -213,6 +213,50 @@
 	background-color: var(--azulClaro);
 }
 
+/* Header: entrada de arriba hacia abajo al cargar */
+.site-header__logo,
+.site-header__nav,
+.site-header__actions,
+.site-header__menu {
+	animation-name: headerFadeInDown;
+	animation-duration: 0.75s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+
+.site-header__logo {
+	animation-delay: 0.05s;
+}
+
+.site-header__nav {
+	animation-delay: 0.15s;
+}
+
+.site-header__actions,
+.site-header__menu {
+	animation-delay: 0.25s;
+}
+
+@keyframes headerFadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-2.4rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-header__logo,
+	.site-header__nav,
+	.site-header__actions,
+	.site-header__menu {
+		animation: none !important;
+	}
+}
+
 @media (max-width: 96rem) {
 	.site-header__inner {
 		border-radius: 4rem;
