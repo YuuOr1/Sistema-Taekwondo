@@ -1,0 +1,340 @@
+.eventos {
+	position: relative;
+	overflow: hidden;
+	padding: 7rem 2rem 7rem 2rem;
+	background-image: url('../../img/fondo-taekwondo.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.eventos__overlay {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.62);
+	pointer-events: none;
+}
+
+.eventos__container {
+	position: relative;
+	z-index: 1;
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.eventos__top {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.8rem;
+}
+
+.eventos__bottom {
+	margin-top: 1.8rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.8rem;
+}
+
+.eventos__card {
+	border-radius: 2rem;
+	box-shadow: 0 1.2rem 2.8rem rgba(0, 0, 0, 0.3);
+}
+
+.eventos__card--info {
+	background-color: var(--azulOscuro);
+	border-right: 1rem solid #171d52;
+	border-bottom: 1rem solid #171d52;
+	color: var(--blanco);
+	padding: 2rem 2.2rem 2.2rem 2.2rem;
+}
+
+.eventos__badge {
+	display: inline-flex;
+	background-color: var(--rojo);
+	color: var(--blanco);
+	border-radius: 2.5rem;
+	padding: 0.7rem 1.6rem 0.7rem 1.6rem;
+	font-size: 1.8rem;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: 0.02rem;
+}
+
+.eventos__title {
+	margin: 1.8rem 0 0 0;
+	font-size: 4.4rem;
+	font-weight: 700;
+	letter-spacing: 0.04rem;
+}
+
+.eventos__subtitle {
+	margin: 1rem 0 0 0;
+	color: var(--amarillo);
+	font-size: 4rem;
+	font-family: var(--fuenteHeading);
+	line-height: 1.1;
+	font-style: italic;
+	font-weight: 900;
+}
+
+.eventos__description {
+	margin: 1.4rem 0 0 0;
+	font-size: 2.7rem;
+	line-height: 1.45;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.eventos__card--date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	background-color: var(--amarillo);
+	border-right: 1rem solid #ccb800;
+	border-bottom: 1rem solid #ccb800;
+	color: var(--negro);
+	text-align: center;
+	padding: 2.2rem 2rem 2rem 2rem;
+}
+
+.eventos__calendar {
+	width: 6.4rem;
+	height: 6.4rem;
+}
+
+.eventos__day {
+	margin: 1rem 0 0 0;
+	font-size: 5.2rem;
+	line-height: 1;
+	font-family: var(--fuenteHeading);
+	font-weight: 900;
+}
+
+.eventos__month {
+	margin: 0.8rem 0 0 0;
+	font-size: 4rem;
+	line-height: 1.1;
+	color: #000;
+	font-weight: 700;
+}
+
+.eventos__time {
+	margin: 1rem 0 0 0;
+	font-size: 5rem;
+	line-height: 1;
+	font-family: var(--fuenteHeading);
+	font-weight: 900;
+}
+
+.eventos__card--price {
+	background-color: var(--rojo);
+	border-right: 1rem solid #9f1f31;
+	border-bottom: 1rem solid #9f1f31;
+	color: var(--blanco);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2.2rem 1.8rem 2rem 1.8rem;
+}
+
+.eventos__price-label {
+	margin: 0;
+	font-size: 4rem;
+	letter-spacing: 0.04rem;
+	font-weight: 500;
+}
+
+.eventos__price {
+	margin: 1.2rem 0 0 0;
+	font-family: var(--fuenteHeading);
+	font-size: 7rem;
+	line-height: 1;
+	font-weight: 900;
+}
+
+.eventos__currency {
+	margin: 1rem 0 0 0;
+	font-size: 4rem;
+	line-height: 1;
+	font-weight: 500;
+}
+
+.eventos__card--location,
+.eventos__card--stats {
+	background-color: rgba(24, 27, 36, 0.75);
+	border: 0.3rem solid rgba(255, 255, 255, 0.75);
+	-webkit-backdrop-filter: blur(0.3rem);
+	backdrop-filter: blur(0.3rem);
+}
+
+.eventos__card--location {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 2.4rem 2.6rem 2.4rem 2.6rem;
+}
+
+.eventos__pin {
+	width: 5.6rem;
+	height: 5.6rem;
+}
+
+.eventos__place {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 3.8rem;
+	line-height: 1.2;
+	font-weight: 500;
+}
+
+.eventos__city {
+	margin: 0.4rem 0 0 0;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 3rem;
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+.eventos__card--stats {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 4.8rem;
+	padding: 2.2rem 2.8rem 2.2rem 2.8rem;
+}
+
+.eventos__stat {
+    color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+}
+
+.eventos__stat-number {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: 6.2rem;
+	line-height: 1;
+	font-weight: 900;
+}
+
+.eventos__stat-text {
+	margin: 1rem 0 0 0;
+	font-size: 3.2rem;
+	line-height: 1;
+	font-weight: 500;
+}
+
+@media (min-width: 76rem) {
+	.eventos {
+		padding: 6rem 2.2rem 7rem 2.2rem;
+	}
+
+	.eventos__top {
+		grid-template-columns: 1.4fr 0.95fr 0.95fr;
+		align-items: stretch;
+	}
+
+	.eventos__bottom {
+		grid-template-columns: 1.1fr 1.1fr;
+		max-width: 72rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.eventos__title {
+		font-size: 4.2rem;
+	}
+
+	.eventos__subtitle {
+		font-size: 3.8rem;
+	}
+
+	.eventos__description {
+		font-size: 3rem;
+	}
+
+	.eventos__price-label,
+	.eventos__currency {
+		font-size: 3.9rem;
+	}
+
+	.eventos__price {
+		font-size: 6rem;
+	}
+
+	.eventos__day {
+		font-size: 5.4rem;
+	}
+
+	.eventos__month,
+	.eventos__time {
+		font-size: 4.1rem;
+	}
+
+	.eventos__place {
+		font-size: 3.6rem;
+	}
+
+	.eventos__city,
+	.eventos__stat-text {
+		font-size: 2.8rem;
+	}
+
+	.eventos__stat-number {
+		font-size: 5.8rem;
+	}
+}
+
+@media (max-width: 40rem) {
+
+	.eventos {
+		padding: 5.2rem 1.4rem 5.6rem 1.4rem;
+	}
+
+	.eventos__badge {
+		font-size: 1.4rem;
+	}
+
+	.eventos__title {
+		font-size: 3.2rem;
+	}
+
+	.eventos__subtitle {
+		font-size: 2.8rem;
+	}
+
+	.eventos__description {
+		font-size: 1.9rem;
+	}
+
+	.eventos__month,
+	.eventos__time,
+	.eventos__price-label,
+	.eventos__currency,
+	.eventos__place,
+	.eventos__stat-text {
+		font-size: 2.6rem;
+	}
+
+	.eventos__day,
+	.eventos__price,
+	.eventos__stat-number {
+		font-size: 4.4rem;
+	}
+
+	.eventos__city {
+		font-size: 2.2rem;
+	}
+
+	.eventos__card--stats {
+		gap: 3rem;
+	}
+}
+
+
+@media (max-width: 76rem) {
+    .eventos__card--info {
+        text-align: center;
+    }
+}

@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/homepage/header.css">
     <link rel="stylesheet" href="css/homepage/hero.css">
     <link rel="stylesheet" href="css/homepage/servicios.css">
-
+    <link rel="stylesheet" href="css/homepage/eventos.css">
+    
     <title>Escuela de Taekwondo MooPalKwan</title>
 </head>
 <body>
@@ -112,8 +113,52 @@
         </div>
     </section>
     <!--- Eventos -->
-    <section id="eventos">
+    <section id="eventos" class="eventos">
+        <div class="eventos__overlay"></div>
+        <div class="eventos__container">
+            <div class="eventos__top">
+                <article class="eventos__card eventos__card--info">
+                    <span class="eventos__badge">PROXIMO EVENTO</span>
+                    <h2 class="eventos__title">Torneo Regional</h2>
+                    <p class="eventos__subtitle">Taekwondo</p>
+                    <p class="eventos__description">Lorem ipsum dolor sit amet consectetur. Urna nunc eu elit molestie rutrum pharetra vulputate ornare.</p>
+                </article>
 
+                <article class="eventos__card eventos__card--date" aria-label="Fecha y hora del evento">
+                        <img class="eventos__calendar" src="assets/date.svg" alt="Icono de calendario">
+                        <p class="eventos__day">7</p>
+                        <p class="eventos__month">Marzo 2026</p>
+                        <p class="eventos__time">9:00AM</p>
+                </article>
+
+                <article class="eventos__card eventos__card--price">
+                    <p class="eventos__price-label">INSCRIPCION</p>
+                    <p class="eventos__price">$300</p>
+                    <p class="eventos__currency">MXN</p>
+                </article>
+            </div>
+
+            <div class="eventos__bottom">
+                <article class="eventos__card eventos__card--location">
+                    <img class="eventos__pin" src="assets/map-pin.svg" alt="Ubicacion del evento">
+                    <div>
+                        <p class="eventos__place">Gimnasio Municipal</p>
+                        <p class="eventos__city">Tijuana, B.C.</p>
+                    </div>
+                </article>
+
+                <article class="eventos__card eventos__card--stats">
+                    <div class="eventos__stat">
+                        <p class="eventos__stat-number">150</p>
+                        <p class="eventos__stat-text">cupos</p>
+                    </div>
+                    <div class="eventos__stat">
+                        <p class="eventos__stat-number">3</p>
+                        <p class="eventos__stat-text">categorias</p>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
     <!--- Mision y Visión -->
     <section id="mision-vision">
