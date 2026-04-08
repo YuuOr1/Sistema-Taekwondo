@@ -112,5 +112,25 @@
     </footer>
 
     <script src="assets/js/examenes.js"></script>
+
+    <div id="modal-reprobados" class="modal">
+    <div class="modal-content">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h3>Alumnos Reprobados</h3>
+    
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Cinta</th>
+                    <th>Categoría</th>
+                    <th>Calificación</th>
+                </tr>
+            </thead>
+            <tbody id="modal-tabla-reprobados"></tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
