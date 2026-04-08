@@ -40,12 +40,16 @@
                 <h3 class="section-title">Información personal</h3>
                 <div class="fields-grid">
                     <div class="field-group span-2">
-                        <label>Nombre completo</label>
-                        <input type="text" id="nombre" placeholder="Ej. Juan Carlos Pérez López" name="nombre">
+                        <label>Nombre</label>
+                        <input type="text" id="nombre" placeholder="Ej. Juan" name="nombre">
+                        <label>Apellido Paterno</label>
+                        <input type="text" id="apellidoPaterno" placeholder="Ej. Pérez" name="apellidoPaterno">
+                        <label>Apellido Materno</label>
+                        <input type="text" id="apellidoMaterno" placeholder="Ej. López" name="apellidoMaterno">
                     </div>
                     <div class="field-group">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" id="fechaNac" name="fechaNac">
+                        <input type="date" id="fechaNac" name="fechaNacimiento">
                     </div>
                     <div class="field-group">
                         <label>Edad</label>
@@ -57,7 +61,7 @@
                     </div>
                     <div class="field-group">
                         <label>Estado civil</label>
-                        <select id="opcionEstado" name="opcionEstado">
+                        <select id="opcionEstado" name="estadoCivil">
                             <option value="">Seleccionar...</option>
                             <option value="1">Soltero(a)</option>
                             <option value="2">Casado(a)</option>
@@ -79,11 +83,11 @@
                     </div>
                     <div class="field-group">
                         <label>Fecha último examen</label>
-                        <input type="date" id="fechaExamen" name="fechaExamen">
+                        <input type="date" id="fechaExamen" name="examenAnterior">
                     </div>
                     <div class="field-group">
                         <label>Grado actual (Cinta)</label>
-                        <select id="opcionCinta" name="opcionCinta">
+                        <select id="opcionCinta" name="cintaAlumno">
                             <option value="">Seleccionar...</option>
                             <option value="blanca">Blanca — 10 Gup</option>
                             <option value="amarilla">Amarilla — 9 Gup</option>
@@ -117,11 +121,11 @@
                 <div class="fields-grid">
                     <div class="field-group">
                         <label>Teléfono tutor</label>
-                        <input type="tel" id="telefono" placeholder="Ej. 664 123 4567" name="telefono">
+                        <input type="tel" id="telefono" placeholder="Ej. 664 123 4567" name="telefonoTutor">
                     </div>
                     <div class="field-group">
                         <label>Correo tutor</label>
-                        <input type="email" id="correo" placeholder="correo@ejemplo.com" name="correo">
+                        <input type="email" id="correo" placeholder="correo@ejemplo.com" name="correoTutor">
                     </div>
                     <div class="field-group">
                         <label>Empresa / Sucursal</label>
