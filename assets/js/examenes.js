@@ -8,10 +8,30 @@ const alumnos = [
 ];
 
 const historial = [
-    { fecha: "15 Junio 2024",    total: 18, aprobados: 15, reprobados: 3 },
-    { fecha: "10 Mayo 2024",     total: 22, aprobados: 20, reprobados: 2 },
-    { fecha: "20 Agosto 2024",   total: 14, aprobados: 12, reprobados: 2 },
-    { fecha: "12 Julio 2024",    total: 19, aprobados: 17, reprobados: 2 },
+    { fecha: "15 Junio 2024",    total: 18, aprobados: 15, reprobados: 3,  alumnos: [
+            { id: 1, nombre: "Juan Pérez", edad: 14, cinta: "Azul", categoria: "Juvenil", calificacion: 6 },
+            { id: 2, nombre: "Ana López", edad: 12, cinta: "Verde", categoria: "Infantil", calificacion: 5.5 },
+            { id: 3, nombre: "Luis Torres", edad: 16, cinta: "Roja", categoria: "Juvenil", calificacion: 6.2 },
+            { id: 4, nombre: "Carlos Gómez", edad: 15, cinta: "Amarilla", categoria: "Juvenil", calificacion: 8 }
+        ] },
+    { fecha: "10 Mayo 2024",     total: 22, aprobados: 20, reprobados: 2,  alumnos: [
+            { id: 5, nombre: "Viviana Diaz", edad: 14, cinta: "Azul", categoria: "Juvenil", calificacion: 6 },
+            { id: 6, nombre: "Liliana Ramirez", edad: 12, cinta: "Verde", categoria: "Infantil", calificacion: 5.5 },
+            { id: 7, nombre: "Angel Torres", edad: 16, cinta: "Roja", categoria: "Juvenil", calificacion: 6.2 },
+            { id: 8, nombre: "Pedro Pazcal", edad: 15, cinta: "Amarilla", categoria: "Juvenil", calificacion: 8 }
+        ]},
+    { fecha: "20 Agosto 2024",   total: 14, aprobados: 12, reprobados: 2,  alumnos: [
+            { id: 9, nombre: "Juan Antonio", edad: 14, cinta: "Azul", categoria: "Juvenil", calificacion: 6 },
+            { id: 10, nombre: "Gabriela Recinos", edad: 12, cinta: "Verde", categoria: "Infantil", calificacion: 5.5 },
+            { id: 11, nombre: "Ezequiel Comi", edad: 16, cinta: "Roja", categoria: "Juvenil", calificacion: 6.2 },
+            { id: 12, nombre: "Antoni Comi", edad: 15, cinta: "Amarilla", categoria: "Juvenil", calificacion: 8 }
+        ] },
+    { fecha: "12 Julio 2024",    total: 19, aprobados: 17, reprobados: 2,  alumnos: [
+            { id: 13, nombre: "Alejandro Garcia", edad: 14, cinta: "Azul", categoria: "Juvenil", calificacion: 6 },
+            { id: 14, nombre: "Esteban Machado", edad: 12, cinta: "Verde", categoria: "Infantil", calificacion: 5.5 },
+            { id: 15, nombre: "Fernando Torres", edad: 16, cinta: "Roja", categoria: "Juvenil", calificacion: 6.2 },
+            { id: 16, nombre: "Jorge Gutierritoz", edad: 15, cinta: "Amarilla", categoria: "Juvenil", calificacion: 8 }
+        ] },
 ];
 
 // ── BELT BADGE ──
@@ -93,27 +113,85 @@ function renderCalificaciones() {
 function renderHistorial() {
     const grid = document.getElementById("historial-grid");
     grid.innerHTML = "";
-    historial.forEach(h => {
+
+    historial.forEach((h, index) => {
         grid.innerHTML += `
         <div class="historial-card">
+
             <h4>Examen — ${h.fecha}</h4>
             <p class="historial-meta">Total de alumnos: <strong>${h.total}</strong></p>
+
             <div class="historial-stats">
                 <div class="stat-box aprobados">
                     <span class="stat-num">${h.aprobados}</span>
                     <span class="stat-label">Aprobados</span>
                 </div>
-                <div class="stat-box reprobados">
+
+                <!-- CLICK -->
+                <div class="stat-box reprobados" onclick="abrirModal(${index})"">
                     <span class="stat-num">${h.reprobados}</span>
                     <span class="stat-label">Reprobados</span>
                 </div>
+
                 <div class="stat-box">
                     <span class="stat-num">${Math.round(h.aprobados/h.total*100)}%</span>
                     <span class="stat-label">Aprobación</span>
                 </div>
             </div>
+
+            <div id="reprobados-${index}" class="lista-reprobados" style="display:none;">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Cinta</th>
+                            <th>Categoría</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-reprobados-${index}"></tbody>
+                </table>
+            </div>
+
         </div>`;
     });
+}
+
+function abrirModal(index) {
+    const modal = document.getElementById("modal-reprobados");
+    const tabla = document.getElementById("modal-tabla-reprobados");
+
+    const examen = historial[index];
+
+    tabla.innerHTML = "";
+
+    const reprobados = examen.alumnos.filter(a => a.calificacion < 7);
+
+    reprobados.forEach(a => {
+        tabla.innerHTML += `
+            <tr>
+                <td>${a.nombre}</td>
+                <td>${a.edad}</td>
+                <td>${beltBadge(a.cinta)}</td>
+                <td>${a.categoria}</td>
+                <td>${a.calificacion}</td>
+            </tr>
+        `;
+    });
+
+    modal.style.display = "block";
+}
+
+function cerrarModal() {
+    document.getElementById("modal-reprobados").style.display = "none";
+}
+
+window.onclick = function(e) {
+    const modal = document.getElementById("modal-reprobados");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
 }
 
 // ── TABS LOGIC ──
@@ -125,6 +203,7 @@ document.querySelectorAll(".tab").forEach(tab => {
         document.getElementById("tab-" + tab.dataset.tab).classList.add("active");
     });
 });
+
 
 // ── INIT ──
 renderLista();
