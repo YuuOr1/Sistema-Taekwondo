@@ -22,6 +22,10 @@
 
 .site-header__logo {
 	flex-shrink: 0;
+	display: inline-flex;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: transform 0.25s ease, filter 0.25s ease;
 }
 
 .site-header__logo img {
@@ -29,6 +33,18 @@
 	width: 8rem;
 	height: 8rem;
 	object-fit: cover;
+	transition: transform 0.25s ease;
+}
+
+.site-header__logo:hover,
+.site-header__logo:focus-visible {
+	transform: translateY(-0.2rem) scale(1.04);
+	filter: drop-shadow(0 0.8rem 1.6rem rgba(0, 0, 0, 0.35));
+}
+
+.site-header__logo:hover img,
+.site-header__logo:focus-visible img {
+	transform: scale(1.06);
 }
 
 .site-header__nav {
