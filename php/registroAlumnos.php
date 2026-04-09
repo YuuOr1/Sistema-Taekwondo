@@ -79,7 +79,7 @@ if(!$conn -> query($sqlFormulario)){
     die("Error al insertar el alumno: " . $conn -> error);
 }
 
-header("Location: consultar_alumnos.html");
+header("Location: /Sistema%20Taekwondo/consultar_alumnos.html");
 exit();
 
 

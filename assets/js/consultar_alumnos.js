@@ -1,10 +1,6 @@
-const alumnos = [
-    {id:1, nombre:"Juan Pérez",   fecha:"12/03/2009", edad:14, ing:"01/01/2025", ex:"15/06/2024", cinta:"Amarilla", prox:"Verde",    empresa:"MPK"},
-    {id:2, nombre:"Ana López",    fecha:"08/07/2011", edad:12, ing:"02/01/2025", ex:"10/05/2024", cinta:"Blanca",   prox:"Amarilla", empresa:"Otra"},
-    {id:3, nombre:"Carlos Gómez", fecha:"22/11/2007", edad:16, ing:"03/01/2025", ex:"20/08/2024", cinta:"Verde",    prox:"Roja",     empresa:"MPK"},
-    {id:4, nombre:"María Torres", fecha:"05/05/2008", edad:15, ing:"04/01/2025", ex:"12/07/2024", cinta:"Azul",     prox:"Naranja",  empresa:"Otra"},
-    {id:5, nombre:"Luis Ramírez", fecha:"30/09/2010", edad:13, ing:"05/01/2025", ex:"18/09/2024", cinta:"Naranja",  prox:"Azul",     empresa:"MPK"}
-];
+console.log("JS SI CARGA");
+
+let alumnosGlobal = [];
 
 // Map belt name (lowercase) → CSS class suffix
 const beltClass = {
@@ -17,15 +13,22 @@ const beltClass = {
     "negra":    "negra"
 };
 
+// 🔥 FUNCIÓN SEGURA (evita null)
 function beltBadge(nombre) {
+    if (!nombre) {
+        return `<span class="belt-badge">Sin cinta</span>`;
+    }
+
     const key = nombre.toLowerCase();
     const cls = beltClass[key] || "blanca";
+
     return `<span class="belt-badge belt-${cls}">
                 <span class="belt-dot"></span>
                 ${nombre}
             </span>`;
 }
 
+// 🔥 RENDER TABLA (con protección de NULL)
 function renderTable(lista) {
     const tabla = document.getElementById("tabla-resultados");
     tabla.innerHTML = "";
@@ -33,15 +36,15 @@ function renderTable(lista) {
     lista.forEach(alumno => {
         const fila = `
             <tr>
-                <td>${alumno.id}</td>
-                <td><strong>${alumno.nombre}</strong></td>
-                <td>${alumno.fecha}</td>
-                <td>${alumno.edad}</td>
-                <td>${alumno.ing}</td>
-                <td>${alumno.ex}</td>
-                <td>${beltBadge(alumno.cinta)}</td>
-                <td>${beltBadge(alumno.prox)}</td>
-                <td>${alumno.empresa}</td>
+                <td>${alumno.id_alumno}</td>
+                <td><strong>${alumno.nombre || "Sin nombre"} ${alumno.apellidoPaterno || ""}</strong></td>
+                <td>${alumno.fechaNacimiento || "Sin fecha"}</td>
+                <td>${alumno.edad || "-"}</td>
+                <td>${alumno.fechaIngreso || "Sin fecha"}</td>
+                <td>${alumno.examenAnterior || "Sin examen"}</td>
+                <td>${beltBadge(alumno.color)}</td>
+                <td>${beltBadge(alumno.sigCinta || alumno.color)}</td>
+                <td>${alumno.sucursal || "Sin empresa"}</td>
                 <td>
                     <button class="btn-table btn-table-edit">Editar</button>
                     <button class="btn-table btn-table-delete">Eliminar</button>
@@ -52,15 +55,31 @@ function renderTable(lista) {
     });
 }
 
-renderTable(alumnos);
+// 🔥 FETCH CORRECTO
+fetch("php/obtenerAlumnos.php")
+    .then(response => response.json())
+    .then(data => {
+        console.log("DATOS DESDE BD:", data); // 👈 para debug
+        alumnosGlobal = data;
+        renderTable(data);
+    })
+    .catch(error => console.error("Error:", error));
 
-// Search functionality
+// 🔍 BÚSQUEDA CORREGIDA
 document.querySelector(".btn-search").addEventListener("click", () => {
     const q = document.getElementById("query").value.toLowerCase().trim();
-    const filtrados = alumnos.filter(a => a.nombre.toLowerCase().includes(q));
+
+    const filtrados = alumnosGlobal.filter(a => {
+        const nombreCompleto = `${a.nombre || ""} ${a.apellidoPaterno || ""}`.toLowerCase();
+        return nombreCompleto.includes(q);
+    });
+
     renderTable(filtrados);
 });
 
+// 🔥 ENTER PARA BUSCAR
 document.getElementById("query").addEventListener("keydown", (e) => {
-    if (e.key === "Enter") document.querySelector(".btn-search").click();
+    if (e.key === "Enter") {
+        document.querySelector(".btn-search").click();
+    }
 });
