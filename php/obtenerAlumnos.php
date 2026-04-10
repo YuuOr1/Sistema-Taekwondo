@@ -1,14 +1,7 @@
 <?php
 require 'conexion.php';
 
-$sql = "SELECT 
-    alumnos.*, 
-    IFNULL(cintas.color, 'Sin cinta') AS color,
-    IFNULL(alumnos.sigCinta, 'Sin cinta') AS sigCinta,
-    IFNULL(alumnos.fechaIngreso, 'Sin fecha') AS fechaIngreso,
-    IFNULL(alumnos.examenAnterior, 'Sin examen') AS examenAnterior,
-    dojos.sucursal
-FROM alumnos
+$sql = "SELECT alumnos.* , FROM alumnos
 JOIN cintas ON alumnos.id_cinta = cintas.id_cinta
 JOIN dojos ON alumnos.id_dojo = dojos.id_dojo";
 
@@ -20,12 +13,12 @@ if (!$resultado) {
 
 $alumnos = [];
 
-while($fila = $resultado->fetch_assoc()){
+while($fila = $resultado -> fetch_assoc()){
     $alumnos[] = $fila;
 }
 
-// 🔥 IMPORTANTE: indicar que es JSON
+# Se indica que enviaremos un json
 header('Content-Type: application/json');
 
-echo json_encode($alumnos);
+echo json_encode($alumnos); # Convertimos el arreglo a JSON
 ?>
