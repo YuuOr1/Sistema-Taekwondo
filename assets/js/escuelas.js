@@ -106,7 +106,6 @@ function renderLista(escuelas) {
         item.innerHTML = `
             ${badgeHtml}
             <div class="escuela-item__body">
-                <p class="escuela-item__number">0${i + 1}</p>
                 <h3 class="escuela-item__name">${esc.nombre}</h3>
                 <p class="escuela-item__address">${esc.direccion}</p>
             </div>

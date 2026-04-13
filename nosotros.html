@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/homepage/header.css">
     <link rel="stylesheet" href="assets/css/homepage/footer.css">
     <link rel="stylesheet" href="assets/css/nosotros/quienes-somos.css">
+    <link rel="stylesheet" href="assets/css/nosotros/instructores.css">
     
     <title>Nosotros — Taekwondo MooPalKwan</title>
 </head>
@@ -34,9 +35,9 @@
             </a>
 
             <nav class="site-header__nav" aria-label="Navegacion principal">
-                <a href="index.html" aria-current="page">Inicio</a>
+                <a href="index.html" >Inicio</a>
                 <a href="escuelas.html">Escuelas</a>
-                <a href="#mision-vision">Nosotros</a>
+                <a href="nosotros.html" aria-current="page">Nosotros</a>
                 <a href="#eventos">Blog</a>
             </nav>
 
@@ -88,7 +89,49 @@
 
     </section>
     <!--- Profesores -->
-    <section id="instructores">
+    <section id="instructores" class="instructores">
+
+        <div class="instructores__header mv-reveal" data-animate="animate__fadeInDown">
+            <h2 class="instructores__title">Conoce a<br><span>nuestros instructores</span></h2>
+        </div>
+
+        <div class="instructores__list">
+
+            <!-- Instructor 1: foto izquierda -->
+            <article class="instructor-card mv-reveal" data-animate="animate__fadeInLeft">
+                <div class="instructor-card__photo-wrap">
+                    <div class="instructor-card__photo-bg">
+                        <img class="instructor-card__photo" src="assets/img/instructor1.webp" alt="Ricardo Ortiz Flores, Instructor de Taekwondo">
+                    </div>
+                </div>
+                <div class="instructor-card__info">
+                    <p class="instructor-card__role">Instructor de Taekwondo</p>
+                    <h3 class="instructor-card__name">Ricardo Ortiz<br>Flores</h3>
+                    <div class="instructor-card__line-wrap">
+                        <span class="instructor-card__line"></span>
+                        <span class="instructor-card__dot"></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Instructor 2: foto derecha (reverse) -->
+            <article class="instructor-card instructor-card--reverse mv-reveal" data-animate="animate__fadeInRight">
+                <div class="instructor-card__photo-wrap">
+                    <div class="instructor-card__photo-bg">
+                        <img class="instructor-card__photo" src="assets/img/instructor2.webp" alt="Nadia Villalvazo, Instructora de Taekwondo">
+                    </div>
+                </div>
+                <div class="instructor-card__info">
+                    <p class="instructor-card__role">Instructora de Taekwondo</p>
+                    <h3 class="instructor-card__name">Nadia<br>Villalvazo</h3>
+                    <div class="instructor-card__line-wrap">
+                        <span class="instructor-card__dot"></span>
+                        <span class="instructor-card__line"></span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
 
     </section>
     <!--- Significado Logo -->
