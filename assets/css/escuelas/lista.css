@@ -1,7 +1,7 @@
 /* ─── Sección principal: lista + mapa ───────────────────────── */
 
 body {
-    background: var(--azulOscuro);
+    background: #0e131d;
 }
 
 .escuelas-main {
@@ -15,7 +15,7 @@ body {
 /* ── Panel izquierdo (lista de escuelas) ────────────────────── */
 
 .escuelas-panel {
-	background: var(--azulOscuro);
+	background: #0e131d;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/homepage/footer.css">
     <link rel="stylesheet" href="assets/css/nosotros/quienes-somos.css">
     <link rel="stylesheet" href="assets/css/nosotros/instructores.css">
+    <link rel="stylesheet" href="assets/css/nosotros/significado-logo.css">
     
     <title>Nosotros — Taekwondo MooPalKwan</title>
 </head>
@@ -52,9 +53,9 @@
                     <img class="site-header__icon-close" src="assets/icons/close.svg" alt="Cerrar menu">
                 </summary>
                 <div class="site-header__menu-content">
-                    <a class="site-header__menu-link" href="#hero" aria-current="page">Inicio</a>
-                    <a class="site-header__menu-link" href="#servicios">Escuelas</a>
-                    <a class="site-header__menu-link" href="#mision-vision">Nosotros</a>
+                    <a class="site-header__menu-link" href="index.html" >Inicio</a>
+                    <a class="site-header__menu-link" href="escuelas.html">Escuelas</a>
+                    <a class="site-header__menu-link" href="nosotros.html" aria-current="page">Nosotros</a>
                     <a class="site-header__menu-link" href="#eventos">Blog</a>
                     <div class="site-header__menu-divider"></div>
                     <a class="site-header__menu-link" href="registroAlumnos.html">Crear cuenta</a>
@@ -135,7 +136,112 @@
 
     </section>
     <!--- Significado Logo -->
-    <section id="significado-logo">
+    <section id="significado-logo" class="slogo-section">
+
+        <div class="slogo-header mv-reveal" data-animate="animate__fadeInDown">
+            <h2 class="slogo-title">Significado del <em>logo</em></h2>
+        </div>
+
+        <div class="slogo-layout">
+
+            <!-- Columna izquierda: logo interactivo con badges radiales -->
+            <div class="slogo-visual-wrap mv-reveal" data-animate="animate__fadeInLeft">
+                <p class="slogo-hint">Pasa el cursor sobre el escudo para descubrir los colores</p>
+
+                <div class="slogo-visual" role="img" aria-label="Escudo Moo Pal Kwan con significado de colores">
+
+                    <!-- Badge rojo -->
+                    <div class="slogo-badge slogo-badge--rojo" aria-hidden="true">
+                        <span class="slogo-badge__swatch"></span>
+                        <div class="slogo-badge__body">
+                            <span class="slogo-badge__name">Pasión y entrega</span>
+                            <span class="slogo-badge__sub">Representa la sangre</span>
+                        </div>
+                    </div>
+
+                    <!-- Badge amarillo -->
+                    <div class="slogo-badge slogo-badge--amarillo" aria-hidden="true">
+                        <span class="slogo-badge__swatch"></span>
+                        <div class="slogo-badge__body">
+                            <span class="slogo-badge__name">Creatividad</span>
+                            <span class="slogo-badge__sub">Renacimiento y el sol</span>
+                        </div>
+                    </div>
+
+                    <!-- Badge azul -->
+                    <div class="slogo-badge slogo-badge--azul" aria-hidden="true">
+                        <span class="slogo-badge__swatch"></span>
+                        <div class="slogo-badge__body">
+                            <span class="slogo-badge__name">Liderazgo</span>
+                            <span class="slogo-badge__sub">Representa el universo</span>
+                        </div>
+                    </div>
+
+                    <!-- Badge blanco -->
+                    <div class="slogo-badge slogo-badge--blanco" aria-hidden="true">
+                        <span class="slogo-badge__swatch"></span>
+                        <div class="slogo-badge__body">
+                            <span class="slogo-badge__name">Armonía y paz</span>
+                            <span class="slogo-badge__sub">Pureza</span>
+                        </div>
+                    </div>
+
+                    <!-- Badge negro -->
+                    <div class="slogo-badge slogo-badge--negro" aria-hidden="true">
+                        <span class="slogo-badge__swatch"></span>
+                        <div class="slogo-badge__body">
+                            <span class="slogo-badge__name">Neutralidad</span>
+                            <span class="slogo-badge__sub">Equilibrio</span>
+                        </div>
+                    </div>
+
+                    <!-- Logo central -->
+                    <div class="slogo-logo-wrap">
+                        <img class="slogo-logo" src="assets/img/logo.webp" alt="Escudo Instituto Mexicano Moo Pal Kwan">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Columna derecha: elementos simbólicos del escudo -->
+            <div class="slogo-symbols mv-reveal" data-animate="animate__fadeInRight">
+                <p class="slogo-symbols__heading">Elementos del escudo</p>
+
+                <article class="slogo-symbol-card">
+                    <img class="slogo-symbol-card__img" src="assets/img/moo.png" alt="Símbolo Moo">
+                    <div>
+                        <h3 class="slogo-symbol-card__name"><span>Moo</span></h3>
+                        <p class="slogo-symbol-card__desc">Marcialidad. El espíritu guerrero y disciplinado del arte marcial.</p>
+                    </div>
+                </article>
+
+                <article class="slogo-symbol-card">
+                    <img class="slogo-symbol-card__img" src="assets/img/jing-jang.png" alt="Símbolo Jing y Jang">
+                    <div>
+                        <h3 class="slogo-symbol-card__name"><span>Jing</span> y <span>Jang</span></h3>
+                        <p class="slogo-symbol-card__desc">El bien y el mal. El equilibrio de fuerzas opuestas que rigen el universo.</p>
+                    </div>
+                </article>
+
+                <article class="slogo-symbol-card">
+                    <img class="slogo-symbol-card__img" src="assets/img/cinturon-negro.png" alt="Cinturón negro">
+                    <div>
+                        <h3 class="slogo-symbol-card__name">Cinturón <span>Negro</span></h3>
+                        <p class="slogo-symbol-card__desc">La meta de todo practicante: la cinta negra y su seguimiento continuo.</p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <!-- Paleta estática (visible solo en móvil) -->
+        <div class="slogo-palette">
+            <div class="slogo-palette__row"><span class="slogo-palette__dot" style="background:#e72f2e"></span><span class="slogo-palette__name">Pasión y entrega</span><span class="slogo-palette__desc">Representa la sangre</span></div>
+            <div class="slogo-palette__row"><span class="slogo-palette__dot" style="background:#fff10c"></span><span class="slogo-palette__name">Creatividad</span><span class="slogo-palette__desc">Renacimiento y el sol</span></div>
+            <div class="slogo-palette__row"><span class="slogo-palette__dot" style="background:#002060;border-color:rgba(70,77,172,0.6)"></span><span class="slogo-palette__name">Liderazgo</span><span class="slogo-palette__desc">Representa el universo</span></div>
+            <div class="slogo-palette__row"><span class="slogo-palette__dot" style="background:#fbfdfd"></span><span class="slogo-palette__name">Armonía y paz</span><span class="slogo-palette__desc">Pureza</span></div>
+            <div class="slogo-palette__row" style="background:rgba(255,255,255,0.02)"><span class="slogo-palette__dot" style="background:#1a1a1a"></span><span class="slogo-palette__name">Neutralidad</span><span class="slogo-palette__desc">Equilibrio</span></div>
+        </div>
 
     </section>
     <!--- Significado Nombre -->
