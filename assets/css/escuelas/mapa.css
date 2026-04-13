@@ -1,5 +1,9 @@
-/* ─── Panel del mapa ─────────────────────────────────────── */
+#mapa-container {
+    width: 100%;
+    height: 100%;
+}
 
+/* ─── Panel del mapa ─────────────────────────────────────── */
 .escuelas-mapa {
 	position: relative;
 	background: #d1d8e6;

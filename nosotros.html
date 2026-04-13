@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,20 +21,9 @@
 
     <link rel="stylesheet" href="assets/css/homepage/header.css">
     <link rel="stylesheet" href="assets/css/homepage/footer.css">
-
-    <link rel="stylesheet" href="assets/css/escuelas/hero.css">
-    <link rel="stylesheet" href="assets/css/escuelas/lista.css">
-    <link rel="stylesheet" href="assets/css/escuelas/mapa.css">
-
-    <!-- Mapkick JS con MapLibre -->
-    <link href="https://unpkg.com/maplibre-gl@5.7.1/dist/maplibre-gl.css" rel="stylesheet" />
-    <script src="https://unpkg.com/maplibre-gl@5.7.1/dist/maplibre-gl.js"></script>
-    <script src="https://unpkg.com/mapkick"></script>
-    <script>
-    Mapkick.options = {style: "https://demotiles.maplibre.org/style.json"}
-    </script>
-
-    <title>Escuelas — Taekwondo MooPalKwan</title>
+    <link rel="stylesheet" href="assets/css/nosotros/quienes-somos.css">
+    
+    <title>Nosotros — Taekwondo MooPalKwan</title>
 </head>
 <body>
     <!--- Header -->
@@ -45,10 +34,10 @@
             </a>
 
             <nav class="site-header__nav" aria-label="Navegacion principal">
-                <a href="index.html">Inicio</a>
-                <a href="escuelas.html" aria-current="page">Escuelas</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="index.html#eventos">Blog</a>
+                <a href="index.html" aria-current="page">Inicio</a>
+                <a href="escuelas.html">Escuelas</a>
+                <a href="#mision-vision">Nosotros</a>
+                <a href="#eventos">Blog</a>
             </nav>
 
             <div class="site-header__actions">
@@ -62,10 +51,10 @@
                     <img class="site-header__icon-close" src="assets/icons/close.svg" alt="Cerrar menu">
                 </summary>
                 <div class="site-header__menu-content">
-                    <a class="site-header__menu-link" href="index.html">Inicio</a>
-                    <a class="site-header__menu-link" href="escuelas.html" aria-current="page">Escuelas</a>
-                    <a class="site-header__menu-link" href="index.html#mision-vision">Nosotros</a>
-                    <a class="site-header__menu-link" href="index.html#eventos">Blog</a>
+                    <a class="site-header__menu-link" href="#hero" aria-current="page">Inicio</a>
+                    <a class="site-header__menu-link" href="#servicios">Escuelas</a>
+                    <a class="site-header__menu-link" href="#mision-vision">Nosotros</a>
+                    <a class="site-header__menu-link" href="#eventos">Blog</a>
                     <div class="site-header__menu-divider"></div>
                     <a class="site-header__menu-link" href="registroAlumnos.html">Crear cuenta</a>
                     <a class="site-header__menu-button" href="login.html">Iniciar Sesion</a>
@@ -73,65 +62,47 @@
             </details>
         </div>
     </header>
+    <!--- Quienes Somos -->
+    <section id="quienes-somos" class="qs-section">
 
-    <!-- ─── Layout principal: lista + mapa ────────────────── -->
-    <main id="escuelas-main" class="escuelas-main">
+        <div class="qs-inner">
 
-        <!-- ── Panel izquierdo: lista ─────────────────────── -->
-        <aside class="escuelas-panel">
-            <div class="escuelas-panel__header">
-                <h2 class="escuelas-panel__heading">Nuestras sedes</h2>
-                <p class="escuelas-panel__hint">Pasa el cursor sobre cada escuela para ver sus horarios.</p>
-                <button
-                    id="location-btn"
-                    class="escuelas-panel__location-btn"
-                    type="button"
-                    aria-label="Ordenar escuelas por distancia"
-                >
-                    <img class="escuelas-panel__location-icon" src="assets/icons/map-pin.svg" alt="">
-                    Encontrar mi escuela más cercana
-                </button>
+            <!-- Columna de texto -->
+            <div class="qs-content mv-reveal" data-animate="animate__fadeInLeft">
+                <h2 class="qs-title">¿Qué es el<br><em>Instituto Moo Pal Kwan?</em></h2>
+                <p class="qs-body">Es un instituto que mantiene la esencia del TAE KWON DO pero con la calidez humana de sus practicantes implementando los valores universales para hacer mejores personas para la comunidad y el entorno que les rodea.</p>
             </div>
 
-            <p class="escuelas-panel__sort-label">Ordenadas por distancia</p>
-
-            <ul id="escuelas-list" class="escuelas-list" aria-label="Lista de escuelas">
-                <!-- Renderizado por escuelas.js -->
-            </ul>
-        </aside>
-
-        <!-- ── Panel derecho: mapa ────────────────────────── -->
-        <div class="escuelas-mapa">
-            <div class="escuelas-mapa__container">
-                <div id="mapa-loading" class="escuelas-mapa__loading">
-                    <div class="escuelas-mapa__loading-spinner"></div>
-                    <p class="escuelas-mapa__loading-text">Cargando mapa…</p>
+            <!-- Columna visual -->
+            <div class="qs-visual mv-reveal" data-animate="animate__fadeInRight">
+                <div class="qs-circle">
+                    <img class="qs-circle__icon" src="assets/icons/community-fill.svg" alt="Comunidad Moo Pal Kwan">
                 </div>
-                <div id="mapa-container"></div>
+                <div class="qs-float-card">
+                    <img class="qs-float-card__icon" src="assets/icons/handshake.svg" alt="">
+                    <p class="qs-float-card__text">Valores<br>universales</p>
+                </div>
             </div>
 
-            <div class="escuelas-mapa__footer">
-                <div class="escuelas-mapa__legend">
-                    <span class="escuelas-mapa__legend-item">
-                        <span class="escuelas-mapa__legend-dot"></span> Escuelas
-                    </span>
-                    <span class="escuelas-mapa__legend-item">
-                        <span class="escuelas-mapa__legend-dot escuelas-mapa__legend-dot--user"></span> Tu ubicación
-                    </span>
-                </div>
-                <a
-                    id="gmaps-link"
-                    class="escuelas-mapa__gmaps-link"
-                    href="https://maps.google.com/?q=Tijuana+Taekwondo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Ver en Google Maps ↗
-                </a>
-            </div>
         </div>
 
-    </main>
+    </section>
+    <!--- Profesores -->
+    <section id="instructores">
+
+    </section>
+    <!--- Significado Logo -->
+    <section id="significado-logo">
+
+    </section>
+    <!--- Significado Nombre -->
+    <section id="significado-nombre">
+
+    </section>
+    <!--- Historia -->
+    <section id="historia">
+
+    </section>
     <!--- Footer -->
     <footer class="site-footer">
         <div class="site-footer__container">
@@ -181,7 +152,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="assets/js/escuelas.js"></script>
+    <script src="assets/js/mision-vision.js"></script>
 </body>
 </html>
