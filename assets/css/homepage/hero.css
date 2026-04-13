@@ -1,9 +1,17 @@
 .hero {
 	position: relative;
 	overflow: hidden;
-	min-height: 76rem;
-	padding: 14rem 1.6rem 0;
-	background: linear-gradient(180deg, #f6ea00 0%, #e4d900 55%, #d7cc00 100%);
+	min-height: 40rem;
+	padding: 0rem 1.6rem 0;
+	/* background: linear-gradient(180deg, #f6ea00 0%, #e4d900 55%, #d7cc00 100%); */
+	background-color: #ffff8c;
+	/* background: linear-gradient(
+		to bottom,
+		rgba(252, 228, 3, 1) 30%,
+		rgba(252, 228, 3, 0.85) 60%,
+		rgba(252, 228, 3, 0.9) 100%
+	); */
+
 }
 
 .hero::after {
@@ -13,7 +21,7 @@
 	bottom: 0;
 	left: 0;
 	height: 12rem;
-	background: linear-gradient(180deg, rgba(246, 234, 0, 0) 0%, rgba(24, 27, 36, 0.6) 100%);
+	/* background: linear-gradient(180deg, rgba(246, 234, 0, 0) 0%, rgba(24, 27, 36, 0.6) 100%); */
 	pointer-events: none;
 }
 
@@ -41,6 +49,7 @@
 	font-weight: 900;
 	line-height: 1.1;
 	color: var(--negro);
+	/* color: #e4e4e4; */
 	text-transform: uppercase;
 	--animate-duration: 0.75s;
 	--animate-delay: 0.1s;
@@ -53,7 +62,8 @@
 	font-style: italic;
 	font-weight: 900;
 	line-height: 0.96;
-	color: var(--rojo);
+	/* color: var(--negro); */
+	color: #b40d15;
 	letter-spacing: 0.6rem;
 	--animate-duration: 0.8s;
 	--animate-delay: 0.25s;
@@ -65,6 +75,7 @@
 	font-weight: 500;
 	line-height: 1.25;
 	color: var(--negro);
+	/* color: #e4e4e4; */
 	--animate-duration: 0.8s;
 	--animate-delay: 0.4s;
 }
@@ -75,14 +86,17 @@
 	justify-content: center;
 	min-width: 33rem;
 	margin-top: 3.8rem;
-	padding: 1.6rem 3.4rem;
-	border-radius: 1.8rem;
+	padding: 1.6rem 3.2rem;
+	border-radius: 1.6rem;
 	font-size: 3.8rem;
 	font-weight: 700;
 	line-height: 1;
 	color: var(--blanco);
-	background-color: var(--azulClaro);
-	box-shadow: 0 0.7rem 0 0 rgba(31, 39, 109, 0.95);
+	/* color: #181b24; */
+	/* background-color: var(--azulClaro); */
+	/* background-color: var(--rojo); */
+	background-color: #021c59;
+	/* box-shadow: 0 0.7rem 0 0 #0925fd; */
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 	--animate-duration: 0.85s;
 	--animate-delay: 0.55s;
@@ -96,7 +110,7 @@
 .hero__media {
 	position: relative;
 	margin: 0;
-	align-self: end;
+	align-self: center;
 	--animate-duration: 1s;
 	--animate-delay: 0.2s;
 }
@@ -112,7 +126,7 @@
 	width: 100%;
 	max-width: 35rem;
 	margin-left: auto;
-	filter: drop-shadow(0 1.6rem 2.4rem rgba(0, 0, 0, 0.28));
+	/* filter: drop-shadow(0 1.6rem 2.4rem rgba(0, 0, 0, 0.28)); */
 	-webkit-mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0) 97%);
 	mask-image: radial-gradient(ellipse at center, #000 62%, rgba(0, 0, 0, 0) 97%);
 }
