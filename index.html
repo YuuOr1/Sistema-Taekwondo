@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="assets/css/homepage/hero.css">
     <link rel="stylesheet" href="assets/css/homepage/servicios.css">
     <link rel="stylesheet" href="assets/css/homepage/eventos.css">
+    <link rel="stylesheet" href="assets/css/homepage/mision-vision.css">
     <link rel="stylesheet" href="assets/css/homepage/footer.css">
     
     <title>Escuela de Taekwondo MooPalKwan</title>
@@ -171,7 +172,43 @@
         </div>
     </section>
     <!--- Mision y Visión -->
-    <section id="mision-vision">
+    <section id="mision-vision" class="mision-vision">
+
+        <!-- Banda Misión: título sección | círculo | contenido -->
+        <article class="mv-band mv-band--mision mv-reveal" data-animate="animate__fadeInLeft">
+            <div class="mv-band__inner">
+
+                <div class="mv-band__circle-col">
+                    <div class="mv-band__circle mv-band__circle--mision">
+                        <img class="mv-band__icon" src="assets/icons/target-fill.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="mv-band__content">
+                    <h3 class="mv-band__title mv-band__title--mision">Misión</h3>
+                    <p class="mv-band__text">Difundir la enseñanza del arte marcial TAE KWON DO, implementando valores universales dentro de la práctica con la finalidad de aportar a la formación integral del practicante.</p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- Banda Visión: contenido | círculo (offset a la derecha) -->
+        <article class="mv-band mv-band--vision mv-reveal" data-animate="animate__fadeInRight">
+            <div class="mv-band__inner mv-band__inner--vision">
+
+                <div class="mv-band__content mv-band__content--center">
+                    <h3 class="mv-band__title mv-band__title--vision">Visión</h3>
+                    <p class="mv-band__text">Ser una organización líder proyectando una imagen de reconocimiento y una institución que alcance todo lo estimulado en el desarrollo del ser humano. Trabajando en conjunto de sus pensamientos y comportamiento logrando una mejor sociedad.</p>
+                </div>
+
+                <div class="mv-band__circle-col">
+                    <div class="mv-band__circle mv-band__circle--vision">
+                        <img class="mv-band__icon" src="assets/icons/eye-optic.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </article>
 
     </section>
     <!--- Galeria -->
@@ -227,5 +264,6 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/mision-vision.js"></script>
 </body>
 </html>

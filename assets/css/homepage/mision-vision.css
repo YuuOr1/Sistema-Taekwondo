@@ -1,0 +1,296 @@
+/* ─── Misión y Visión ───────────────────────────────────────────── */
+
+.mision-vision {
+	background: linear-gradient(180deg, #0a3288 0%, #153d8f 46%, #1f3563 100%);
+	padding: 5rem 1.6rem 6.4rem;
+}
+
+/* ── Bandas ──────────────────────────────────────────── */
+
+.mv-band {
+	border-radius: 1.4rem;
+	transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.mv-band + .mv-band {
+	margin-top: 1.6rem;
+}
+
+.mv-band--mision {
+	opacity: 0;
+	max-width: 120rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mv-band--vision {
+	opacity: 0;
+	max-width: 82rem;
+	margin: 0 auto;
+}
+
+.mv-band:hover {
+	box-shadow:
+		0 2px 8px rgba(24, 27, 36, 0.06),
+		0 16px 46px rgba(24, 27, 36, 0.12);
+	transform: translateY(-2px);
+}
+
+/* ── Layout interior: Misión (3 columnas) ───────────────── */
+
+.mv-band__inner {
+	display: grid;
+	grid-template-columns: 32rem 1fr;
+	align-items: center;
+	gap: 4.4rem;
+	padding: 4rem 4.8rem;
+	background-color: rgba(24, 27, 36, 0.75);
+	border: 0.3rem solid rgba(255, 255, 255, 0.75);
+	border-radius: 2rem;
+}
+
+/* ── Layout interior: Visión (2 columnas) ───────────────── */
+
+.mv-band__inner--vision {
+	grid-template-columns: 1fr 18rem;
+}
+
+/* ── Encabezado de sección (columna izquierda banda 1) ────── */
+
+.mv-section-heading {
+	padding-right: 2.4rem;
+	border-right: 1px solid rgba(24, 27, 36, 0.08);
+}
+
+.mv-section-heading__eyebrow {
+	margin: 0 0 0.8rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.2rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--azulClaro);
+}
+
+.mv-section-heading__title {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(3.2rem, 3.2vw, 5rem);
+	font-weight: 900;
+	line-height: 1.05;
+	color: var(--negro);
+	letter-spacing: -0.02em;
+}
+
+.mv-section-heading__amp {
+	color: var(--rojo);
+	font-style: normal;
+}
+
+.mv-section-heading__line {
+	display: block;
+	margin-top: 1.8rem;
+	width: 7rem;
+	height: 0.45rem;
+	border-radius: 10rem;
+	background: var(--rojo);
+}
+
+/* ── Círculo con ícono ───────────────────────────────── */
+
+.mv-band__circle-col {
+	display: flex;
+	justify-content: center;
+}
+
+.mv-band__circle {
+	width: 17rem;
+	height: 17rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 0.6rem solid rgba(255, 255, 255, 0.92);
+	flex-shrink: 0;
+	transition:
+		transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.35s ease;
+}
+
+.mv-band__circle--mision {
+	background: var(--azulOscuro);
+	box-shadow:
+		0 0 0 0.18rem rgba(31, 39, 109, 0.18),
+		0 1.4rem 3.2rem rgba(31, 39, 109, 0.28);
+}
+
+.mv-band__circle--vision {
+	background: var(--rojo);
+}
+
+.mv-band:hover .mv-band__circle {
+	transform: scale(1.08) rotate(7deg);
+}
+
+.mv-band--mision:hover .mv-band__circle {
+	box-shadow:
+		0 0 0 0.22rem rgba(31, 39, 109, 0.28),
+		0 2rem 4.6rem rgba(31, 39, 109, 0.36);
+}
+
+.mv-band--vision:hover .mv-band__circle {
+	box-shadow:
+		0 0 0 0.22rem rgba(196, 37, 60, 0.28),
+		0 2rem 4.6rem rgba(196, 37, 60, 0.36);
+}
+
+.mv-band__icon {
+	width: 5.2rem;
+	height: 5.2rem;
+	filter: brightness(0) invert(1);
+	transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.mv-band:hover .mv-band__icon {
+	transform: scale(1.14) rotate(-7deg);
+}
+
+/* ── Contenido de texto ─────────────────────────────── */
+
+.mv-band__content--center {
+	text-align: center;
+}
+
+.mv-band__title {
+	margin: 0 0 1.2rem;
+	font-family: var(--fuenteHeading);
+	font-size: 3rem;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.mv-band__title--mision, .mv-band__title--vision {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.mv-band__text {
+	margin: 0;
+	font-size: 1.72rem;
+	line-height: 1.78;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── Estado para animaciones (mision-vision.js) ─────────── */
+
+.mv-reveal {
+	opacity: 0;
+}
+
+.mv-reveal.mv-in-view {
+	opacity: 1;
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+	.mv-band__inner {
+		grid-template-columns: 28rem 1fr;
+		gap: 3.4rem;
+		padding: 3.6rem 3.8rem;
+	}
+
+	.mv-band__inner--vision {
+		grid-template-columns: 1fr 28rem;
+	}
+
+	.mv-section-heading__title {
+		font-size: 4rem;
+	}
+}
+
+@media (max-width: 900px) {
+	.mision-vision {
+		padding: 4rem 1.6rem 5rem;
+	}
+
+	/* Quitar el offset en móvil */
+	.mv-band--vision {
+		max-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.mv-band__inner,
+	.mv-band__inner--vision {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
+		padding: 3.6rem 3rem;
+		gap: 2.4rem;
+	}
+
+	/* El círculo siempre va arriba en móvil */
+	.mv-band__circle-col {
+		order: -1;
+	}
+
+	.mv-section-heading {
+		border-right: none;
+		border-bottom: 1px solid rgba(24, 27, 36, 0.08);
+		padding-right: 0;
+		padding-bottom: 2rem;
+		width: 100%;
+	}
+
+	.mv-section-heading__line {
+		margin: 1.6rem auto 0;
+	}
+
+	.mv-band__content--center {
+		text-align: center;
+	}
+}
+
+@media (max-width: 560px) {
+	.mision-vision {
+		padding: 3.2rem 1.2rem 4.4rem;
+	}
+
+	.mv-band {
+		border-radius: 1rem;
+	}
+
+	.mv-section-heading__title {
+		font-size: 3.2rem;
+	}
+
+	.mv-band__title {
+		font-size: 2.6rem;
+	}
+
+	.mv-band__text {
+		font-size: 1.62rem;
+	}
+
+	.mv-band__circle {
+		width: 14rem;
+		height: 14rem;
+	}
+
+	.mv-band__icon {
+		width: 4.2rem;
+		height: 4.2rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mv-band,
+	.mv-band__circle,
+	.mv-band__icon {
+		transition: none;
+	}
+
+	.mv-reveal {
+		opacity: 1;
+	}
+}
