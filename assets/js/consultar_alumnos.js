@@ -1,4 +1,3 @@
-console.log("JS SI CARGA");
 
 let alumnosGlobal = [];
 
@@ -46,7 +45,7 @@ function renderTable(lista) {
                 <td>${beltBadge(alumno.sigCinta || alumno.color)}</td>
                 <td>${alumno.sucursal || "Sin empresa"}</td>
                 <td>
-                    <button class="btn-table btn-table-edit">Editar</button>
+                    <button class="btn-table btn-table-edit" data-id = "${alumno.id_alumno}" >Editar</button>
                     <button class="btn-table btn-table-delete">Eliminar</button>
                 </td>
             </tr>

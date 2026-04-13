@@ -39,4 +39,4 @@ TransportFactory::setConfig('mailtrap', [
     'username' => '7dd67096fb549c',
     'password' => '37189c3ebb4475',
     'className' => 'Smtp'
-  ]);
+]);
