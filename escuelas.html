@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="assets/img/logo.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <link rel="stylesheet" href="assets/css/homepage/header.css">
+    <link rel="stylesheet" href="assets/css/homepage/footer.css">
+
+    <link rel="stylesheet" href="assets/css/escuelas/hero.css">
+    <link rel="stylesheet" href="assets/css/escuelas/lista.css">
+    <link rel="stylesheet" href="assets/css/escuelas/mapa.css">
+
+    <!-- Mapkick JS con MapLibre -->
+    <link href="https://unpkg.com/maplibre-gl@5.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@5.7.1/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/mapkick"></script>
+    <script>
+    Mapkick.options = {style: "https://demotiles.maplibre.org/style.json"}
+    </script>
+
+    <title>Escuelas — Taekwondo MooPalKwan</title>
+</head>
+<body>
+    <!--- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-header__logo" href="index.html" aria-label="Ir al inicio">
+                <img src="assets/img/logo.webp" alt="Logo Sistema Taekwondo">
+            </a>
+
+            <nav class="site-header__nav" aria-label="Navegacion principal">
+                <a href="index.html">Inicio</a>
+                <a href="escuelas.html" aria-current="page">Escuelas</a>
+                <a href="index.html#mision-vision">Nosotros</a>
+                <a href="index.html#eventos">Blog</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <a class="site-header__link" href="registroAlumnos.html">Crear cuenta</a>
+                <a class="site-header__button" href="login.html">Iniciar Sesion</a>
+            </div>
+
+            <details class="site-header__menu">
+                <summary class="site-header__menu-trigger" aria-label="Abrir menu principal">
+                    <img class="site-header__icon-menu" src="assets/icons/menu-rounded.svg" alt="Abrir menu">
+                    <img class="site-header__icon-close" src="assets/icons/close.svg" alt="Cerrar menu">
+                </summary>
+                <div class="site-header__menu-content">
+                    <a class="site-header__menu-link" href="index.html">Inicio</a>
+                    <a class="site-header__menu-link" href="escuelas.html" aria-current="page">Escuelas</a>
+                    <a class="site-header__menu-link" href="index.html#mision-vision">Nosotros</a>
+                    <a class="site-header__menu-link" href="index.html#eventos">Blog</a>
+                    <div class="site-header__menu-divider"></div>
+                    <a class="site-header__menu-link" href="registroAlumnos.html">Crear cuenta</a>
+                    <a class="site-header__menu-button" href="login.html">Iniciar Sesion</a>
+                </div>
+            </details>
+        </div>
+    </header>
+
+    <!-- ─── Layout principal: lista + mapa ────────────────── -->
+    <main id="escuelas-main" class="escuelas-main">
+
+        <!-- ── Panel izquierdo: lista ─────────────────────── -->
+        <aside class="escuelas-panel">
+            <div class="escuelas-panel__header">
+                <h2 class="escuelas-panel__heading">Nuestras sedes</h2>
+                <p class="escuelas-panel__hint">Pasa el cursor sobre cada escuela para ver sus horarios.</p>
+                <button
+                    id="location-btn"
+                    class="escuelas-panel__location-btn"
+                    type="button"
+                    aria-label="Ordenar escuelas por distancia"
+                >
+                    <img class="escuelas-panel__location-icon" src="assets/icons/map-pin.svg" alt="">
+                    Encontrar mi escuela más cercana
+                </button>
+            </div>
+
+            <p class="escuelas-panel__sort-label">Ordenadas por distancia</p>
+
+            <ul id="escuelas-list" class="escuelas-list" aria-label="Lista de escuelas">
+                <!-- Renderizado por escuelas.js -->
+            </ul>
+        </aside>
+
+        <!-- ── Panel derecho: mapa ────────────────────────── -->
+        <div class="escuelas-mapa">
+            <div class="escuelas-mapa__container">
+                <div id="mapa-loading" class="escuelas-mapa__loading">
+                    <div class="escuelas-mapa__loading-spinner"></div>
+                    <p class="escuelas-mapa__loading-text">Cargando mapa…</p>
+                </div>
+                <div id="mapa-container" style="width:100%;height:100%;"></div>
+            </div>
+
+            <div class="escuelas-mapa__footer">
+                <div class="escuelas-mapa__legend">
+                    <span class="escuelas-mapa__legend-item">
+                        <span class="escuelas-mapa__legend-dot"></span> Escuelas
+                    </span>
+                    <span class="escuelas-mapa__legend-item">
+                        <span class="escuelas-mapa__legend-dot escuelas-mapa__legend-dot--user"></span> Tu ubicación
+                    </span>
+                </div>
+                <a
+                    id="gmaps-link"
+                    class="escuelas-mapa__gmaps-link"
+                    href="https://maps.google.com/?q=Tijuana+Taekwondo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ver en Google Maps ↗
+                </a>
+            </div>
+        </div>
+
+    </main>
+    <!--- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer__container">
+            <div class="site-footer__top">
+                <a class="site-footer__logo-link" href="index.html" aria-label="Ir al inicio">
+                    <img class="site-footer__logo" src="assets/img/logo.webp" alt="Logo MooPalKwan Tae Kwon Do">
+                </a>
+
+                <section class="site-footer__social" aria-label="Redes sociales">
+                    <h3 class="site-footer__title">REDES SOCIALES</h3>
+                    <div class="site-footer__social-links">
+                        <a class="site-footer__icon-link" href="#" aria-label="Facebook">
+                            <img src="assets/icons/facebook.svg" alt="">
+                        </a>
+                        <a class="site-footer__icon-link" href="#" aria-label="Instagram">
+                            <img src="assets/icons/instagram.svg" alt="">
+                        </a>
+                        <a class="site-footer__icon-link" href="#" aria-label="YouTube">
+                            <img src="assets/icons/youtube.svg" alt="">
+                        </a>
+                    </div>
+                </section>
+
+                <section class="site-footer__contact" aria-label="Información de contacto">
+                    <h3 class="site-footer__title">CONTACTO</h3>
+                    <a class="site-footer__contact-item" href="tel:+526631587850">
+                        <img src="assets/icons/phone.svg" alt="">
+                        <span>+52 663 158 7850</span>
+                    </a>
+                    <a class="site-footer__contact-item" href="mailto:email@email.com">
+                        <img src="assets/icons/mail.svg" alt="">
+                        <span>email@email.com</span>
+                    </a>
+                    <a class="site-footer__contact-item" href="https://wa.me/526631587850" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/icons/whatsapp.svg" alt="">
+                        <span>WhatsApp</span>
+                    </a>
+                </section>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p class="site-footer__copyright">2026 Moopalkwan Tae Kwon Do. Todos los derechos reservados.</p>
+                <nav class="site-footer__legal" aria-label="Enlaces legales">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos y condiciones</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/escuelas.js"></script>
+</body>
+</html>

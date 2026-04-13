@@ -1,0 +1,145 @@
+/* ─── Panel del mapa ─────────────────────────────────────── */
+
+.escuelas-mapa {
+	position: relative;
+	background: #d1d8e6;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Contenedor principal del mapa */
+.escuelas-mapa__container {
+	flex: 1;
+	min-height: 76rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.escuelas-mapa__container canvas,
+.escuelas-mapa__container .mapkick-map {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	inset: 0;
+}
+
+/* ── Estado de carga ────────────────────────────────────── */
+
+.escuelas-mapa__loading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.4rem;
+	position: absolute;
+	inset: 0;
+	background: #d5daea;
+	z-index: 10;
+	transition: opacity 0.4s ease;
+}
+
+.escuelas-mapa__loading.is-hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.escuelas-mapa__loading-spinner {
+	width: 3.2rem;
+	height: 3.2rem;
+	border: 0.3rem solid rgba(31, 39, 109, 0.15);
+	border-top-color: var(--azulOscuro);
+	border-radius: 50%;
+	animation: escMapSpin 0.8s linear infinite;
+}
+
+@keyframes escMapSpin {
+	to { transform: rotate(360deg); }
+}
+
+.escuelas-mapa__loading-text {
+	font-family: var(--fuenteHeading);
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: var(--azulOscuro);
+	opacity: 0.7;
+}
+
+/* ── Barra info inferior ────────────────────────────────── */
+
+.escuelas-mapa__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.2rem 2rem;
+	background: rgba(255, 255, 255, 0.92);
+	backdrop-filter: blur(8px);
+	border-top: 1px solid rgba(31, 39, 109, 0.08);
+	gap: 1.2rem;
+	flex-wrap: wrap;
+}
+
+.escuelas-mapa__legend {
+	display: flex;
+	align-items: center;
+	gap: 1.8rem;
+}
+
+.escuelas-mapa__legend-item {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 1.2rem;
+	color: #555;
+}
+
+.escuelas-mapa__legend-dot {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background: var(--rojo);
+	flex-shrink: 0;
+}
+
+.escuelas-mapa__legend-dot--user {
+	background: var(--azulClaro);
+}
+
+.escuelas-mapa__gmaps-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.7rem 1.4rem;
+	border-radius: 0.7rem;
+	background: var(--azulOscuro);
+	color: var(--blanco);
+	font-family: var(--fuenteHeading);
+	font-size: 1.2rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.escuelas-mapa__gmaps-link:hover {
+	background: var(--azulClaro);
+	transform: translateY(-1px);
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 860px) {
+	.escuelas-mapa__container {
+		min-height: 42rem;
+	}
+}
+
+@media (max-width: 560px) {
+	.escuelas-mapa__container {
+		min-height: 32rem;
+	}
+
+	.escuelas-mapa__footer {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.8rem;
+	}
+}

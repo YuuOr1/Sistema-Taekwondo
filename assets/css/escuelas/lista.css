@@ -1,0 +1,273 @@
+/* ─── Sección principal: lista + mapa ───────────────────────── */
+
+body {
+    background: var(--azulOscuro);
+}
+
+.escuelas-main {
+	display: grid;
+	grid-template-columns: 38rem 1fr;
+	min-height: 72rem;
+	background: #edf0f8;
+    margin-top: 14rem;
+}
+
+/* ── Panel izquierdo (lista de escuelas) ────────────────────── */
+
+.escuelas-panel {
+	background: var(--azulOscuro);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.escuelas-panel__header {
+	padding: 3.2rem 2.8rem 2rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.escuelas-panel__heading {
+	margin: 0 0 0.6rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.9rem;
+	font-weight: 800;
+	color: var(--blanco);
+	letter-spacing: -0.01em;
+}
+
+.escuelas-panel__hint {
+	margin: 0;
+	font-size: 1.3rem;
+	color: rgba(255, 255, 255, 0.48);
+	line-height: 1.5;
+}
+
+/* Botón solicitar ubicación */
+.escuelas-panel__location-btn {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 1.6rem;
+	padding: 1rem 1.8rem;
+	border: none;
+	border-radius: 0.8rem;
+	background: rgba(246, 234, 0, 0.12);
+	color: var(--amarillo);
+	font-family: var(--fuenteHeading);
+	font-size: 1.3rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background 0.22s ease, transform 0.22s ease;
+	width: 100%;
+	text-align: left;
+}
+
+.escuelas-panel__location-btn:hover {
+	background: rgba(246, 234, 0, 0.2);
+	transform: translateY(-1px);
+}
+
+.escuelas-panel__location-btn:active {
+	transform: translateY(0);
+}
+
+.escuelas-panel__location-icon {
+	width: 1.8rem;
+	height: 1.8rem;
+	flex-shrink: 0;
+	filter: brightness(0) saturate(100%) invert(93%) sepia(67%) saturate(600%) hue-rotate(348deg) brightness(104%);
+}
+
+/* Etiqueta de estado de ordenamiento */
+.escuelas-panel__sort-label {
+	display: none;
+	margin: 1.4rem 2.8rem 0;
+	font-size: 1.15rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.36);
+}
+
+.escuelas-panel__sort-label.is-visible {
+	display: block;
+}
+
+/* Lista de escuelas */
+.escuelas-list {
+	list-style: none;
+	margin: 0;
+	padding: 1.6rem 0 2.4rem;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.escuelas-list::-webkit-scrollbar {
+	width: 0.4rem;
+}
+
+.escuelas-list::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.escuelas-list::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.14);
+	border-radius: 10rem;
+}
+
+/* ── Cada tarjeta de escuela ────────────────────────────────── */
+
+.escuela-item {
+	position: relative;
+	margin: 0 1.6rem 0.8rem;
+	border-radius: 1rem;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	overflow: hidden;
+	cursor: pointer;
+	transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.escuela-item:hover,
+.escuela-item.is-active {
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.18);
+	transform: translateX(3px);
+}
+
+.escuela-item.is-active {
+	border-color: var(--amarillo);
+	background: rgba(246, 234, 0, 0.08);
+}
+
+/* Badge de distancia */
+.escuela-item__badge {
+	display: none;
+	position: absolute;
+	top: 1.4rem;
+	right: 1.4rem;
+	padding: 0.3rem 0.8rem;
+	background: var(--amarillo);
+	color: #09122f;
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 800;
+	border-radius: 10rem;
+	line-height: 1.4;
+}
+
+.escuela-item__badge.is-visible {
+	display: block;
+}
+
+/* Cuerpo de la tarjeta */
+.escuela-item__body {
+	padding: 1.6rem 1.8rem;
+}
+
+.escuela-item__number {
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.18em;
+	color: rgba(255, 255, 255, 0.3);
+	margin-bottom: 0.4rem;
+}
+
+.escuela-item__name {
+	margin: 0 0 0.6rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.55rem;
+	font-weight: 700;
+	color: var(--blanco);
+	line-height: 1.3;
+	padding-right: 6rem; /* espacio para badge */
+}
+
+.escuela-item__address {
+	margin: 0;
+	font-size: 1.25rem;
+	color: rgba(255, 255, 255, 0.48);
+	line-height: 1.5;
+}
+
+/* ── Panel de horario (hover reveal) ────────────────────────── */
+
+.escuela-item__schedule {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+	padding: 0 1.8rem;
+}
+
+.escuela-item:hover .escuela-item__schedule,
+.escuela-item.is-active .escuela-item__schedule {
+	max-height: 20rem;
+	padding: 0 1.8rem 1.6rem;
+}
+
+.escuela-item__schedule-inner {
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding-top: 1.2rem;
+}
+
+.escuela-item__schedule-title {
+	margin: 0 0 0.8rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+}
+
+.escuela-item__schedule-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.5rem 1.4rem;
+}
+
+.escuela-item__schedule-row {
+	display: contents;
+}
+
+.escuela-item__day {
+	font-size: 1.25rem;
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.escuela-item__hours {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--blanco);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+	.escuelas-main {
+		grid-template-columns: 32rem 1fr;
+	}
+}
+
+@media (max-width: 860px) {
+	.escuelas-main {
+		grid-template-columns: 1fr;
+		min-height: auto;
+	}
+
+	.escuelas-panel {
+		max-height: 48rem;
+	}
+
+	.escuelas-list {
+		padding-bottom: 1.6rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.escuela-item,
+	.escuela-item__schedule {
+		transition: none;
+	}
+}
