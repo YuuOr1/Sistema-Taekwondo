@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/index.css">
@@ -70,18 +70,38 @@
     <section id="hero" class="hero">
         <div class="hero__container">
             <div class="hero__content">
-                <p class="hero__eyebrow animate__animated animate__fadeInRight">INSTITUTO MEXICANO MOO PAL KWAN, A.C.</p>
-                <h1 class="hero__title hero__title--animated" aria-label="TAEKWONDO">
+                <p class="hero__eyebrow"
+                   data-aos="fade-right"
+                   data-aos-offset="0"
+                   data-aos-delay="200"
+                   data-aos-duration="700">INSTITUTO MEXICANO MOO PAL KWAN, A.C.</p>
+                <h1 class="hero__title hero__title--animated" aria-label="TAEKWONDO"
+                    data-aos="fade-up"
+                    data-aos-offset="0"
+                    data-aos-delay="350"
+                    data-aos-duration="700">
                     <span>T</span><span>A</span><span>E</span><span>K</span><span>W</span><span>O</span><span>N</span><span>D</span><span>O</span>
                 </h1>
-                <p class="hero__description animate__animated animate__fadeInRight">Implementamos valores para crear personas de bien</p>
-                <a class="hero__cta animate__animated animate__fadeInRight" href="views/registroAlumnos.html">
+                <p class="hero__description"
+                   data-aos="fade-right"
+                   data-aos-offset="0"
+                   data-aos-delay="500"
+                   data-aos-duration="700">Implementamos valores para crear personas de bien</p>
+                <a class="hero__cta" href="views/registroAlumnos.html"
+                   data-aos="fade-right"
+                   data-aos-offset="0"
+                   data-aos-delay="650"
+                   data-aos-duration="700">
                     <img class="hero__cta-icon" src="assets/icons/arrow-filled.svg" alt="">
                     <span class="hero__cta-text">Inscribete aquí</span>
                 </a>
             </div>
 
-            <figure class="hero__media animate__animated animate__fadeInLeft">
+            <figure class="hero__media"
+                    data-aos="fade-left"
+                    data-aos-offset="0"
+                    data-aos-delay="200"
+                    data-aos-duration="900">
                 <img src="assets/img/logo-secundario.png" alt="Estudiante de taekwondo en postura de combate">
             </figure>
         </div>
@@ -89,15 +109,23 @@
     <!--- Servicios -->
     <section id="servicios" class="servicios">
         <div class="servicios__container">
-            <h2 class="servicios__title">SERVICIOS DISPONIBLES</h2>
+            <h2 class="servicios__title"
+                data-aos="fade-up"
+                data-aos-duration="700">SERVICIOS DISPONIBLES</h2>
 
             <div class="servicios__layout">
-                <figure class="servicios__media">
+                <figure class="servicios__media"
+                         data-aos="fade-right"
+                         data-aos-duration="900"
+                         data-aos-delay="100">
                     <img src="assets/img/banderas.webp" alt="Practica de taekwondo en dojo con banderas">
                 </figure>
 
                 <div class="servicios__cards">
-                    <article class="servicios__card servicios__card--left">
+                    <article class="servicios__card servicios__card--left"
+                             data-aos="fade-left"
+                             data-aos-duration="700"
+                             data-aos-delay="100">
                         <img class="servicios__icon" src="assets/icons/taekwondo.svg" alt="Icono de taekwondo">
                         <div class="servicios__content">
                             <p class="servicios__text">Clases regulares de taekwondo</p>
@@ -105,7 +133,10 @@
                         </div>
                     </article>
 
-                    <article class="servicios__card servicios__card--right">
+                    <article class="servicios__card servicios__card--right"
+                             data-aos="fade-left"
+                             data-aos-duration="700"
+                             data-aos-delay="220">
                         <div class="servicios__content">
                             <p class="servicios__text">Examenes de grados/cintas</p>
                             <span class="servicios__line"></span>
@@ -113,7 +144,10 @@
                         <img class="servicios__icon" src="assets/icons/belt.svg" alt="Icono de cinta de taekwondo">
                     </article>
 
-                    <article class="servicios__card servicios__card--left">
+                    <article class="servicios__card servicios__card--left"
+                             data-aos="fade-left"
+                             data-aos-duration="700"
+                             data-aos-delay="340">
                         <img class="servicios__icon" src="assets/icons/event-star.svg" alt="Icono de evento">
                         <div class="servicios__content">
                             <p class="servicios__text">Eventos y exhibiciones</p>
@@ -129,21 +163,30 @@
         <div class="eventos__overlay"></div>
         <div class="eventos__container">
             <div class="eventos__top">
-                <article class="eventos__card eventos__card--info">
+                <article class="eventos__card eventos__card--info"
+                         data-aos="fade-right"
+                         data-aos-duration="800"
+                         data-aos-delay="100">
                     <span class="eventos__badge">PROXIMO EVENTO</span>
                     <h2 class="eventos__title">Torneo Regional</h2>
                     <p class="eventos__subtitle">Taekwondo</p>
                     <p class="eventos__description">Lorem ipsum dolor sit amet consectetur. Urna nunc eu elit molestie rutrum pharetra vulputate ornare.</p>
                 </article>
 
-                <article class="eventos__card eventos__card--date" aria-label="Fecha y hora del evento">
+                <article class="eventos__card eventos__card--date" aria-label="Fecha y hora del evento"
+                         data-aos="zoom-in"
+                         data-aos-duration="700"
+                         data-aos-delay="250">
                         <img class="eventos__calendar" src="assets/icons/date.svg" alt="Icono de calendario">
                         <p class="eventos__day">7</p>
                         <p class="eventos__month">Marzo 2026</p>
                         <p class="eventos__time">9:00AM</p>
                 </article>
 
-                <article class="eventos__card eventos__card--price">
+                <article class="eventos__card eventos__card--price"
+                         data-aos="fade-left"
+                         data-aos-duration="800"
+                         data-aos-delay="380">
                     <p class="eventos__price-label">INSCRIPCION</p>
                     <p class="eventos__price">$300</p>
                     <p class="eventos__currency">MXN</p>
@@ -151,7 +194,10 @@
             </div>
 
             <div class="eventos__bottom">
-                <article class="eventos__card eventos__card--location">
+                <article class="eventos__card eventos__card--location"
+                         data-aos="fade-right"
+                         data-aos-duration="700"
+                         data-aos-delay="150">
                     <img class="eventos__pin" src="assets/icons/map-pin.svg" alt="Ubicacion del evento">
                     <div>
                         <p class="eventos__place">Gimnasio Municipal</p>
@@ -159,7 +205,10 @@
                     </div>
                 </article>
 
-                <article class="eventos__card eventos__card--stats">
+                <article class="eventos__card eventos__card--stats"
+                         data-aos="fade-left"
+                         data-aos-duration="700"
+                         data-aos-delay="280">
                     <div class="eventos__stat">
                         <p class="eventos__stat-number">150</p>
                         <p class="eventos__stat-text">cupos</p>
@@ -176,10 +225,16 @@
     <section id="mision-vision" class="mision-vision">
 
         <!-- Banda Misión: título sección | círculo | contenido -->
-        <article class="mv-band mv-band--mision mv-reveal" data-animate="animate__fadeInLeft">
+        <article class="mv-band mv-band--mision"
+                 data-aos="fade-right"
+                 data-aos-duration="850"
+                 data-aos-delay="100">
             <div class="mv-band__inner">
 
-                <div class="mv-band__circle-col">
+                <div class="mv-band__circle-col"
+                     data-aos="zoom-in"
+                     data-aos-duration="700"
+                     data-aos-delay="300">
                     <div class="mv-band__circle mv-band__circle--mision">
                         <img class="mv-band__icon" src="assets/icons/target-fill.svg" alt="">
                     </div>
@@ -194,7 +249,10 @@
         </article>
 
         <!-- Banda Visión: contenido | círculo (offset a la derecha) -->
-        <article class="mv-band mv-band--vision mv-reveal" data-animate="animate__fadeInRight">
+        <article class="mv-band mv-band--vision"
+                 data-aos="fade-left"
+                 data-aos-duration="850"
+                 data-aos-delay="100">
             <div class="mv-band__inner mv-band__inner--vision">
 
                 <div class="mv-band__content mv-band__content--center">
@@ -202,7 +260,10 @@
                     <p class="mv-band__text">Ser una organización líder proyectando una imagen de reconocimiento y una institución que alcance todo lo estimulado en el desarrollo del ser humano. Trabajando en conjunto de sus pensamientos y comportamiento logrando una mejor sociedad.</p>
                 </div>
 
-                <div class="mv-band__circle-col">
+                <div class="mv-band__circle-col"
+                     data-aos="zoom-in"
+                     data-aos-duration="700"
+                     data-aos-delay="300">
                     <div class="mv-band__circle mv-band__circle--vision">
                         <img class="mv-band__icon" src="assets/icons/eye-optic.svg" alt="">
                     </div>
@@ -214,12 +275,17 @@
     </section>
     <!--- Galeria -->
     <section id="galeria" class="galeria">
-        <div class="galeria__header">
+        <div class="galeria__header"
+             data-aos="fade-up"
+             data-aos-duration="700">
             <h2 class="galeria__title">GALERÍA</h2>
             <span class="galeria__divider"></span>
         </div>
 
-        <div class="galeria__wrapper">
+        <div class="galeria__wrapper"
+             data-aos="fade-up"
+             data-aos-duration="800"
+             data-aos-delay="180">
             <div class="galeria__slider" role="region" aria-label="Galería de fotos" aria-roledescription="carrusel">
 
                 <!-- Overlay de gradiente -->
@@ -278,11 +344,16 @@
     <footer class="site-footer">
         <div class="site-footer__container">
             <div class="site-footer__top">
-                <a class="site-footer__logo-link" href="index.html" aria-label="Ir al inicio">
+                <a class="site-footer__logo-link" href="index.html" aria-label="Ir al inicio"
+                   data-aos="fade-right"
+                   data-aos-duration="700">
                     <img class="site-footer__logo" src="assets/img/logo.webp" alt="Logo MooPalKwan Tae Kwon Do">
                 </a>
 
-                <section class="site-footer__social" aria-label="Redes sociales">
+                <section class="site-footer__social" aria-label="Redes sociales"
+                         data-aos="fade-up"
+                         data-aos-duration="700"
+                         data-aos-delay="150">
                     <h3 class="site-footer__title">REDES SOCIALES</h3>
                     <div class="site-footer__social-links">
                         <a class="site-footer__icon-link" href="#" aria-label="Facebook">
@@ -297,7 +368,10 @@
                     </div>
                 </section>
 
-                <section class="site-footer__contact" aria-label="Información de contacto">
+                <section class="site-footer__contact" aria-label="Información de contacto"
+                         data-aos="fade-left"
+                         data-aos-duration="700"
+                         data-aos-delay="300">
                     <h3 class="site-footer__title">CONTACTO</h3>
                     <a class="site-footer__contact-item" href="tel:+526631587850">
                         <img src="assets/icons/phone.svg" alt="">
@@ -323,7 +397,17 @@
             </div>
         </div>
     </footer>
-    <script src="assets/js/mision-vision.js"></script>
+
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80,
+        });
+    </script>
     <script src="assets/js/galeria.js"></script>
 </body>
 </html>
