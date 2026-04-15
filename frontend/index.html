@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/homepage/servicios.css">
     <link rel="stylesheet" href="assets/css/homepage/eventos.css">
     <link rel="stylesheet" href="assets/css/homepage/mision-vision.css">
+    <link rel="stylesheet" href="assets/css/homepage/galeria.css">
     <link rel="stylesheet" href="assets/css/homepage/footer.css">
     
     <title>Escuela de Taekwondo MooPalKwan</title>
@@ -212,8 +213,66 @@
 
     </section>
     <!--- Galeria -->
-    <section id="galeria">
+    <section id="galeria" class="galeria">
+        <div class="galeria__header">
+            <h2 class="galeria__title">GALERÍA</h2>
+            <span class="galeria__divider"></span>
+        </div>
 
+        <div class="galeria__wrapper">
+            <div class="galeria__slider" role="region" aria-label="Galería de fotos" aria-roledescription="carrusel">
+
+                <!-- Overlay de gradiente -->
+                <div class="galeria__overlay" aria-hidden="true"></div>
+
+                <!-- Contador top-left -->
+                <span class="galeria__counter" aria-live="polite" aria-atomic="true">1 / 4</span>
+
+                <!-- Botón pausa top-right -->
+                <button class="galeria__btn-pause" type="button" aria-label="Pausar reproducción">
+                    <div class="galeria__icon-pause">
+                        <img src="assets/icons/pause.svg" alt="">
+                    </div>
+                    <div class="galeria__icon-play" hidden>
+                        <img src="assets/icons/play.svg"  alt="" >
+                    </div>
+                </button>
+
+                <!-- Botón anterior -->
+                <button class="galeria__btn-prev" type="button" aria-label="Diapositiva anterior">
+                    <img src="assets/icons/left-c.svg" alt="">
+                </button>
+
+                <!-- Track -->
+                <div class="galeria__track">
+                    <div class="galeria__slide">
+                        <img src="assets/img/galeria/galeria_1.webp" alt="Galería MooPalKwan foto 1" loading="lazy">
+                    </div>
+                    <div class="galeria__slide">
+                        <img src="assets/img/galeria/galeria_2.webp" alt="Galería MooPalKwan foto 2" loading="lazy">
+                    </div>
+                    <div class="galeria__slide">
+                        <img src="assets/img/galeria/galeria_3.webp" alt="Galería MooPalKwan foto 3" loading="lazy">
+                    </div>
+                    <div class="galeria__slide">
+                        <img src="assets/img/galeria/galeria_4.webp" alt="Galería MooPalKwan foto 4" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Botón siguiente -->
+                <button class="galeria__btn-next" type="button" aria-label="Diapositiva siguiente">
+                    <img src="assets/icons/right-c.svg" alt="">
+                </button>
+
+            </div>
+
+            <div class="galeria__dots" aria-label="Seleccionar diapositiva">
+                <span class="galeria__dot" role="button" tabindex="0" aria-label="Ir a foto 1"></span>
+                <span class="galeria__dot" role="button" tabindex="0" aria-label="Ir a foto 2"></span>
+                <span class="galeria__dot" role="button" tabindex="0" aria-label="Ir a foto 3"></span>
+                <span class="galeria__dot" role="button" tabindex="0" aria-label="Ir a foto 4"></span>
+            </div>
+        </div>
     </section>
     <!--- Footer -->
     <footer class="site-footer">
@@ -265,5 +324,6 @@
         </div>
     </footer>
     <script src="assets/js/mision-vision.js"></script>
+    <script src="assets/js/galeria.js"></script>
 </body>
 </html>

@@ -1,0 +1,325 @@
+/* ─── Galería ─────────────────────────────────────────────────────────── */
+
+.galeria {
+	padding: 6rem 0 7rem;
+	background: linear-gradient(180deg, #151824 0%, #0d1020 100%);
+}
+
+/* ── Encabezado ────────────────────────────────────────────────────────── */
+
+.galeria__header {
+	padding: 0 1.6rem 3.6rem;
+	text-align: center;
+}
+
+.galeria__eyebrow {
+	display: block;
+	margin: 0 0 1.6rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.3rem;
+	font-weight: 700;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+}
+
+.galeria__title {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: 5.2rem;
+	font-style: italic;
+	font-weight: 800;
+	letter-spacing: 0.25rem;
+	color: var(--blanco);
+}
+
+.galeria__title span {
+	color: var(--rojo);
+}
+
+.galeria__divider {
+	display: block;
+	width: 20rem;
+	height: 0.45rem;
+	background: var(--rojo);
+	margin: 1.8rem auto 0;
+	border-radius: 0.3rem;
+}
+
+/* ── Wrapper centrado ───────────────────────────────────────────────────── */
+
+.galeria__wrapper {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 0 2.4rem;
+}
+
+/* ── Slider ─────────────────────────────────────────────────────────────── */
+
+.galeria__slider {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: 1.6rem;
+	overflow: hidden;
+	box-shadow:
+		0 0.8rem 2.4rem rgba(0, 0, 0, 0.5),
+		0 0 0 0.2rem rgba(255, 255, 255, 0.07);
+	cursor: pointer;
+}
+
+/* ── Track (JS controla el transform) ──────────────────────────────────── */
+
+.galeria__track {
+	display: flex;
+	width: 400%;
+	height: 100%;
+	transition: transform 0.62s cubic-bezier(0.76, 0, 0.24, 1);
+	will-change: transform;
+}
+
+.galeria__slide {
+	width: 25%;
+	height: 100%;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.galeria__slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.5s ease;
+}
+
+.galeria__slide.is-active img {
+	transform: scale(1.03);
+}
+
+/* ── Overlay: aparece en hover del slider ───────────────────────────────── */
+
+.galeria__overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(10, 14, 28, 0.55) 0%,
+		transparent 35%,
+		transparent 60%,
+		rgba(10, 14, 28, 0.5) 100%
+	);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 2;
+	pointer-events: none;
+	border-radius: inherit;
+}
+
+.galeria__slider:hover .galeria__overlay,
+.galeria__slider:focus-within .galeria__overlay {
+	opacity: 1;
+}
+
+/* ── Contador top-left: "1 / 4" ────────────────────────────────────────── */
+
+.galeria__counter {
+	position: absolute;
+	top: 1.4rem;
+	left: 1.6rem;
+	z-index: 4;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.2rem;
+	padding: 0.5rem 1.2rem;
+	background: rgba(10, 14, 28, 0.72);
+	border: 0.15rem solid rgba(255, 255, 255, 0.18);
+	border-radius: 3rem;
+	font-family: var(--fuenteHeading);
+	font-size: 1.4rem;
+	font-weight: 700;
+	color: var(--blanco);
+	letter-spacing: 0.06em;
+	backdrop-filter: blur(0.6rem);
+	opacity: 0;
+	transform: translateY(-0.6rem);
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	pointer-events: none;
+}
+
+.galeria__slider:hover .galeria__counter,
+.galeria__slider:focus-within .galeria__counter {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ── Botón pausa/continuar: top-right ───────────────────────────────────── */
+
+.galeria__btn-pause {
+	position: absolute;
+	top: 1.4rem;
+	right: 1.6rem;
+	z-index: 4;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.8rem;
+	height: 3.8rem;
+	background: rgba(10, 14, 28, 0.72);
+	border: 0.15rem solid rgba(255, 255, 255, 0.18);
+	border-radius: 50%;
+	cursor: pointer;
+	backdrop-filter: blur(0.6rem);
+	opacity: 0;
+	transform: translateY(-0.6rem);
+	transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+}
+
+.galeria__btn-pause img {
+	width: 1.6rem;
+	height: 1.6rem;
+	display: block;
+	filter: invert(1);
+}
+
+.galeria__slider:hover .galeria__btn-pause,
+.galeria__slider:focus-within .galeria__btn-pause {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.galeria__btn-pause:hover {
+	background: var(--rojo) !important;
+	border-color: transparent;
+}
+
+/* ── Botones prev / next (lados) ────────────────────────────────────────── */
+
+.galeria__btn-prev,
+.galeria__btn-next {
+	position: absolute;
+	top: 50%;
+	z-index: 4;
+	transform: translateY(-50%) scale(0.85);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 4.4rem;
+	height: 4.4rem;
+	background: rgba(10, 14, 28, 0.72);
+	border: 0.15rem solid rgba(255, 255, 255, 0.18);
+	border-radius: 50%;
+	cursor: pointer;
+	backdrop-filter: blur(0.6rem);
+	opacity: 0;
+	transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+}
+
+.galeria__btn-prev {
+	left: 1.4rem;
+}
+
+.galeria__btn-next {
+	right: 1.4rem;
+}
+
+.galeria__btn-prev img,
+.galeria__btn-next img {
+	width: 2rem;
+	height: 2rem;
+	display: block;
+	filter: invert(1);
+}
+
+.galeria__slider:hover .galeria__btn-prev,
+.galeria__slider:hover .galeria__btn-next,
+.galeria__slider:focus-within .galeria__btn-prev,
+.galeria__slider:focus-within .galeria__btn-next {
+	opacity: 1;
+	transform: translateY(-50%) scale(1);
+}
+
+.galeria__btn-prev:hover,
+.galeria__btn-next:hover {
+	background: var(--azulClaro);
+	border-color: transparent;
+}
+
+/* ── Indicadores (dots) ─────────────────────────────────────────────────── */
+
+.galeria__dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding: 2rem 0 0;
+}
+
+.galeria__dot {
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.22);
+	transition: background 0.3s ease, transform 0.3s ease;
+	cursor: pointer;
+}
+
+.galeria__dot.is-active {
+	background: var(--rojo);
+	transform: scale(1.6);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 960px) {
+	.galeria__wrapper {
+		max-width: 70rem;
+	}
+}
+
+@media (max-width: 600px) {
+	.galeria {
+		padding: 5rem 0 6rem;
+	}
+
+	.galeria__title {
+		font-size: 4rem;
+	}
+
+	.galeria__wrapper {
+		padding: 0 1.2rem;
+	}
+
+	.galeria__btn-prev,
+	.galeria__btn-next {
+		width: 3.6rem;
+		height: 3.6rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.galeria__title {
+		font-size: 3.2rem;
+	}
+
+	.galeria__btn-prev,
+	.galeria__btn-next {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.galeria__btn-prev img,
+	.galeria__btn-next img {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+
+/* ── Movimiento reducido ────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+	.galeria__track {
+		transition: none;
+	}
+}
