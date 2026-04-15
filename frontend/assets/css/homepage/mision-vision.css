@@ -3,6 +3,7 @@
 .mision-vision {
 	background: linear-gradient(180deg, #0a3288 0%, #153d8f 46%, #1f3563 100%);
 	padding: 5rem 1.6rem 6.4rem;
+	overflow: hidden;
 }
 
 /* ── Bandas ──────────────────────────────────────────── */
@@ -17,14 +18,12 @@
 }
 
 .mv-band--mision {
-	opacity: 0;
 	max-width: 120rem;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .mv-band--vision {
-	opacity: 0;
 	max-width: 82rem;
 	margin: 0 auto;
 }

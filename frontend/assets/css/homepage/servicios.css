@@ -1,6 +1,7 @@
 .servicios {
 	padding: 6rem 1.6rem 7rem;
 	background: linear-gradient(180deg, #151824 0%, #111522 100%);
+	overflow: hidden;
 }
 
 .servicios__container {
@@ -109,7 +110,7 @@
 	}
 }
 
-@media (max-width: 96rem) {
+@media (max-width: 960px) {
 	.servicios {
 		padding-top: 5rem;
 	}
