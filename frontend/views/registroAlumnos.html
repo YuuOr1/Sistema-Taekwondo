@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Alumno - Sistema Taekwondo</title>
-    <link rel="stylesheet" href="assets/css/registroAlumnos.css">
+    <link rel="stylesheet" href="../assets/css/registroAlumnos.css">
 </head>
 
 <body>
     <header>
         <div class="logo-container">
-            <img src="./img/logo.png" class="logo">
+            <img src="../assets/img/logo.png" class="logo" alt="Logo Taekwondo">
             <div>
                 <h1>Sistema Integral de Gestión</h1>
                 <p>Instituto Mexicano Moo Pal Kwan</p>
             </div>
         </div>
         <nav>
-            <a href="dashboard.html">Panel</a>
-            <a href="consultar_alumnos.html">Alumnos</a>
-            <a href="login.html" class="logout-btn">Cerrar sesión</a>
+            <a href="../views/dashboard.html">Panel</a>
+            <a href="../views/consultar_alumnos.html">Alumnos</a>
+            <a href="../views/login.html" class="logout-btn">Cerrar sesión</a>
         </nav>
     </header>
 
@@ -31,7 +31,7 @@
                 <h2>Registrar Nuevo Alumno</h2>
                 <p class="subtitle">Completa el formulario con la información del alumno</p>
             </div>
-            <a href="consultar_alumnos.html" class="btn-back">← Volver a alumnos</a>
+            <a href="../views/consultar_alumnos.html" class="btn-back">← Volver a alumnos</a>
         </div>
 
     <form action = "php/registroAlumnos.php" method = "POST">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="field-group">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" id="fechaNac" name="fechaNacimiento">
+                        <input type="date" id="fechaNac" name="fechaNacimiento" title="fechaNac">
                     </div>
                     <div class="field-group">
                         <label>Edad</label>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="field-group">
                         <label>Estado civil</label>
-                        <select id="opcionEstado" name="estadoCivil">
+                        <select id="opcionEstado" name="estadoCivil" title="opcionEstado">
                             <option value="">Seleccionar...</option>
                             <option value="1">Soltero(a)</option>
                             <option value="2">Casado(a)</option>
@@ -79,15 +79,15 @@
                 <div class="fields-grid">
                     <div class="field-group">
                         <label>Fecha de ingreso</label>
-                        <input type="date" id="fechaIngreso" name="fechaIngreso">
+                        <input type="date" id="fechaIngreso" name="fechaIngreso" title="fechaIngreso">
                     </div>
                     <div class="field-group">
                         <label>Fecha último examen</label>
-                        <input type="date" id="fechaExamen" name="examenAnterior">
+                        <input type="date" id="fechaExamen" name="examenAnterior" title="fechaexamen">
                     </div>
                     <div class="field-group">
                         <label>Grado actual (Cinta)</label>
-                        <select id="opcionCinta" name="cintaAlumno">
+                        <select id="opcionCinta" name="cintaAlumno" title="opcionCinta">
                             <option value="">Seleccionar...</option>
                             <option value="blanca">Blanca — 10 Gup</option>
                             <option value="amarilla">Amarilla — 9 Gup</option>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="field-group">
                         <label>Próximo grado</label>
-                        <select id="sigCinta" name="sigCinta">
+                        <select id="sigCinta" name="sigCinta" title="sigCinta">
                             <option value="">Seleccionar...</option>
                             <option value="blanca">Blanca — 10 Gup</option>
                             <option value="amarilla">Amarilla — 9 Gup</option>
@@ -135,7 +135,7 @@
             </div>
 
             <div class="form-actions">
-                <a href="consultar_alumnos.html" class="btn-cancel">Cancelar</a>
+                <a href="../views/consultar_alumnos.html" class="btn-cancel">Cancelar</a>
                 <button type = "submit" id="botonEnviar" class="btn-submit"> Registrar alumno</button>
             </div>
 
@@ -149,7 +149,7 @@
         <p>Instituto Mexicano Moo Pal Kwan — Sistema de gestión de torneos</p>
     </footer>
 
-    <script src="assets/js/registroAlumnos.js"></script>
+    <script src="../assets/js/registroAlumnos.js"></script>
 </body>
 
 </html>
