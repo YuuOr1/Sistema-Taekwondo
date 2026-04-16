@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/css/normalize.css">
     <link rel="stylesheet" href="../assets/css/index.css">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../assets/css/nosotros/quienes-somos.css">
     <link rel="stylesheet" href="../assets/css/nosotros/instructores.css">
     <link rel="stylesheet" href="../assets/css/nosotros/significado-logo.css">
+    <link rel="stylesheet" href="../assets/css/nosotros/significado-nombre.css">
     
     <title>Nosotros — Taekwondo MooPalKwan</title>
 </head>
@@ -245,7 +246,157 @@
 
     </section>
     <!--- Significado Nombre -->
-    <section id="significado-nombre">
+    <section id="significado-nombre" class="snom-section">
+
+        <!-- ── Encabezado ── -->
+        <div class="snom-header mv-reveal" data-animate="animate__fadeInDown">
+            <span class="snom-eyebrow">무팔관</span>
+            <h2 class="snom-title">Significado del <em>nombre</em></h2>
+            <p class="snom-subtitle">Cada sílaba encierra siglos de filosofía marcial coreana</p>
+        </div>
+
+        <!-- ── Tres palabras: Moo · Pal · Kwan ── -->
+        <div class="snom-words mv-reveal" data-animate="animate__fadeInUp">
+
+            <div class="snom-word snom-word--moo">
+                <span class="snom-word__kr" aria-hidden="true">무</span>
+                <div class="snom-word__content">
+                    <h3 class="snom-word__roman">Moo</h3>
+                    <p class="snom-word__def">Marcialidad — el espíritu guerrero y disciplinado del arte marcial.</p>
+                </div>
+                <img class="snom-word__icon" src="../assets/icons/shield-outline.svg" alt="">
+            </div>
+
+            <div class="snom-word snom-word--pal">
+                <span class="snom-word__kr" aria-hidden="true">팔</span>
+                <div class="snom-word__content">
+                    <h3 class="snom-word__roman">Pal</h3>
+                    <p class="snom-word__def">Ocho enseñanzas — basadas en los cinco principios de la filosofía china y coreana.</p>
+                </div>
+                <img class="snom-word__icon" src="../assets/icons/yinyang-fill.svg" alt="">
+            </div>
+
+            <div class="snom-word snom-word--kwan">
+                <span class="snom-word__kr" aria-hidden="true">관</span>
+                <div class="snom-word__content">
+                    <h3 class="snom-word__roman">Kwan</h3>
+                    <p class="snom-word__def">Instituto — el lugar donde se reúnen y crecen los practicantes.</p>
+                </div>
+                <img class="snom-word__icon" src="../assets/icons/people-community.svg" alt="">
+            </div>
+
+        </div>
+
+        <!-- ── Bloque: Las 8 enseñanzas ── -->
+        <div class="snom-teachings">
+
+            <div class="snom-teachings__header mv-reveal" data-animate="animate__fadeInDown">
+                <span class="snom-teachings__eyebrow">Las 8 enseñanzas del Pal</span>
+                <h3 class="snom-teachings__title">Filosofía en <em>acción</em></h3>
+            </div>
+
+            <!-- 5 principios fundamentales: strip horizontal editorial -->
+            <div class="snom-principles mv-reveal" data-animate="animate__fadeInUp">
+
+                <div class="snom-principle" style="--i:0">
+                    <img class="snom-principle__icon" src="../assets/icons/meditation.svg" alt="" aria-hidden="true">
+                    <span class="snom-principle__name">Humildad</span>
+                </div>
+
+                <div class="snom-principle" style="--i:1">
+                    <img class="snom-principle__icon" src="../assets/icons/balance.svg" alt="" aria-hidden="true">
+                    <span class="snom-principle__name">Integridad</span>
+                </div>
+
+                <div class="snom-principle" style="--i:2">
+                    <img class="snom-principle__icon" src="../assets/icons/in-progress.svg" alt="" aria-hidden="true">
+                    <span class="snom-principle__name">Perseverancia</span>
+                </div>
+
+                <div class="snom-principle" style="--i:3">
+                    <img class="snom-principle__icon" src="../assets/icons/yinyang-fill.svg" alt="" aria-hidden="true">
+                    <span class="snom-principle__name">Autocontrol</span>
+                </div>
+
+                <div class="snom-principle" style="--i:4">
+                    <img class="snom-principle__icon" src="../assets/icons/shield-outline.svg" alt="" aria-hidden="true">
+                    <span class="snom-principle__name">Espíritu</span>
+                </div>
+
+            </div>
+
+            <!-- 3 enseñanzas adicionales: grid asimétrico -->
+            <div class="snom-extra mv-reveal" data-animate="animate__fadeInUp">
+
+                <!-- Igualdad — columna izquierda alta -->
+                <article class="snom-extra-card snom-extra-card--feature">
+                    <img class="snom-extra-card__icon" src="../assets/icons/people-community.svg" alt="">
+                    <h4 class="snom-extra-card__title">Igualdad</h4>
+                    <p class="snom-extra-card__desc">El taekwondo es de todos y para todos, sin distinción alguna.</p>
+                </article>
+
+                <!-- Columna derecha: dos filas -->
+                <div class="snom-extra__stack">
+
+                    <article class="snom-extra-card">
+                        <img class="snom-extra-card__icon" src="../assets/icons/people-community.svg" alt="">
+                        <h4 class="snom-extra-card__title">Fraternidad</h4>
+                        <p class="snom-extra-card__desc">Practicantes, maestros y padres de familia forman una sola familia unida por el arte.</p>
+                    </article>
+
+                    <article class="snom-extra-card">
+                        <img class="snom-extra-card__icon" src="../assets/icons/shield-outline.svg" alt="">
+                        <h4 class="snom-extra-card__title">Lealtad</h4>
+                        <p class="snom-extra-card__desc">Hacia el maestro, los amigos, la familia y sobre todo a uno mismo: base de la identidad.</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ── Conclusión + Coreano ── -->
+        <div class="snom-summary mv-reveal" data-animate="animate__fadeInUp">
+            <div class="snom-summary__inner">
+
+                <p class="snom-summary__text"><strong>Moo Pal Kwan</strong> significa</p>
+                <p class="snom-summary__phrase">"Instituto de las 8 marcialidades"</p>
+
+                <div class="snom-divider" aria-hidden="true"></div>
+
+                <!-- Bloque coreano -->
+                <div class="snom-korean">
+                    <span class="snom-korean__label">한국어 — Versión coreana</span>
+                    <div class="snom-korean__grid">
+
+                        <div class="snom-korean__item">
+                            <span class="snom-korean__glyph" aria-hidden="true">무</span>
+                            <span class="snom-korean__roman">Moo</span>
+                            <span class="snom-korean__text">무자비</span>
+                        </div>
+
+                        <span class="snom-korean__divider" aria-hidden="true"></span>
+
+                        <div class="snom-korean__item">
+                            <span class="snom-korean__glyph" aria-hidden="true">팔</span>
+                            <span class="snom-korean__roman">Pal</span>
+                            <span class="snom-korean__text">여덟 가지 가르침</span>
+                        </div>
+
+                        <span class="snom-korean__divider" aria-hidden="true"></span>
+
+                        <div class="snom-korean__item">
+                            <span class="snom-korean__glyph" aria-hidden="true">관</span>
+                            <span class="snom-korean__roman">Kwan</span>
+                            <span class="snom-korean__text">연구소</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     </section>
     <!--- Historia -->
@@ -301,6 +452,15 @@
             </div>
         </div>
     </footer>
-    <script src="../assets/js/mision-vision.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80,
+        });
+    </script>
 </body>
 </html>

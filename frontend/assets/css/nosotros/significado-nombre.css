@@ -1,0 +1,629 @@
+/* ─── Significado del Nombre ─────────────────────────────────── */
+
+.snom-section {
+	position: relative;
+	overflow: hidden;
+	padding: 9rem 1.6rem 11rem;
+	background: #080b14;
+}
+
+/* Malla de puntos */
+.snom-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+	background-size: 3.2rem 3.2rem;
+	pointer-events: none;
+}
+
+/* Glow rojo superior */
+.snom-section::after {
+	content: "";
+	position: absolute;
+	top: -10%;
+	left: -5%;
+	width: 75rem;
+	height: 75rem;
+	background: radial-gradient(circle, rgba(196, 37, 60, 0.09) 0%, transparent 60%);
+	pointer-events: none;
+}
+
+/* ── Encabezado ──────────────────────────────────────────────── */
+
+.snom-header {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	margin-bottom: 7rem;
+}
+
+.snom-eyebrow {
+	display: inline-block;
+	margin: 0 0 2rem;
+	font-family: var(--fuenteHeading);
+	font-size: 2.4rem;
+	font-weight: 900;
+	letter-spacing: 0.12em;
+	color: var(--amarillo);
+	padding: 0.7rem 2.8rem;
+	border: 1px solid rgba(246, 234, 0, 0.28);
+	border-radius: 10rem;
+	background: rgba(246, 234, 0, 0.05);
+}
+
+.snom-title {
+	margin: 0 0 1.6rem;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(4rem, 5.5vw, 6.8rem);
+	font-weight: 900;
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+	color: var(--blanco);
+}
+
+.snom-title em {
+	font-style: italic;
+	color: var(--amarillo);
+}
+
+.snom-subtitle {
+	margin: 0 auto;
+	font-size: 1.75rem;
+	color: rgba(255, 255, 255, 0.45);
+	max-width: 54rem;
+	line-height: 1.75;
+}
+
+/* ── Tres palabras: Moo / Pal / Kwan ────────────────────────── */
+
+.snom-words {
+	position: relative;
+	z-index: 1;
+	max-width: 88rem;
+	margin: 0 auto 9rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.snom-word {
+	display: grid;
+	grid-template-columns: 9.2rem 1fr 3.2rem;
+	gap: 0 3.4rem;
+	align-items: center;
+	padding: 3.8rem 3.2rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	position: relative;
+	cursor: default;
+	transition: padding-left 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Barra de acento lateral — aparece en hover */
+.snom-word::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 40%;
+	width: 2px;
+	border-radius: 10rem;
+	opacity: 0;
+	transition: opacity 0.28s ease, height 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.snom-word:hover {
+	padding-left: 5rem;
+}
+
+.snom-word:hover::before {
+	opacity: 1;
+	height: 65%;
+}
+
+.snom-word--moo::before { background: var(--rojo); }
+.snom-word--pal::before { background: var(--amarillo); }
+.snom-word--kwan::before { background: var(--azulClaro); }
+
+/* Número */
+.snom-word__num {
+	font-family: var(--fuenteHeading);
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	color: rgba(255, 255, 255, 0.14);
+	text-align: right;
+	align-self: flex-start;
+	padding-top: 0.8rem;
+}
+
+/* Carácter coreano — estrella visual */
+.snom-word__kr {
+	font-family: var(--fuenteHeading);
+	font-size: 8rem;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	text-align: center;
+	user-select: none;
+	transition: color 0.36s ease;
+}
+
+.snom-word--moo .snom-word__kr  { color: rgba(196, 37, 60, 0.2); }
+.snom-word--pal .snom-word__kr  { color: rgba(246, 234, 0, 0.18); }
+.snom-word--kwan .snom-word__kr { color: rgba(70, 77, 172, 0.26); }
+
+.snom-word--moo:hover .snom-word__kr  { color: rgba(196, 37, 60, 0.55); }
+.snom-word--pal:hover .snom-word__kr  { color: rgba(246, 234, 0, 0.52); }
+.snom-word--kwan:hover .snom-word__kr { color: rgba(70, 77, 172, 0.62); }
+
+/* Contenido */
+.snom-word__content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+
+.snom-word__roman {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(4rem, 5vw, 5.6rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.035em;
+	color: var(--blanco);
+}
+
+.snom-word__def {
+	margin: 0;
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.4);
+	line-height: 1.65;
+	max-width: 52rem;
+}
+
+/* Ícono */
+.snom-word__icon {
+	width: 2.6rem;
+	height: 2.6rem;
+	filter: invert(1);
+	opacity: 0.16;
+	justify-self: center;
+	transition: opacity 0.28s ease;
+	flex-shrink: 0;
+}
+
+.snom-word:hover .snom-word__icon {
+	opacity: 0.5;
+}
+
+/* ── Bloque: 8 enseñanzas ─────────────────────────────────── */
+
+.snom-teachings {
+	position: relative;
+	z-index: 1;
+	max-width: 112rem;
+	margin: 0 auto 9rem;
+}
+
+/* Header izquierda — sin centrado genérico */
+.snom-teachings__header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 88rem;
+	margin: 0 auto 5.6rem;
+}
+
+.snom-teachings__eyebrow {
+	font-family: var(--fuenteHeading);
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+	opacity: 0.7;
+	margin-bottom: 1.4rem;
+}
+
+.snom-teachings__title {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(3.6rem, 4.5vw, 5.8rem);
+	font-weight: 900;
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+	color: var(--blanco);
+}
+
+.snom-teachings__title em {
+	font-style: italic;
+	color: var(--amarillo);
+}
+
+/* ── Strip horizontal: 5 principios ──────────────────────── */
+
+.snom-principles {
+	max-width: 88rem;
+	margin: 0 auto 2px;
+	display: flex;
+	align-items: stretch;
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.snom-principle {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.4rem;
+	padding: 3.2rem 1.4rem;
+	border-right: 1px solid rgba(255, 255, 255, 0.06);
+	text-align: center;
+	cursor: default;
+	transition: background 0.28s ease;
+	animation: snomFadeIn 0.5s both;
+	animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+.snom-principle:last-child {
+	border-right: none;
+}
+
+.snom-principle:hover {
+	background: rgba(255, 255, 255, 0.03);
+}
+
+@keyframes snomFadeIn {
+	from { opacity: 0; transform: translateY(1.2rem); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+.snom-principle__icon {
+	width: 4.4rem;
+	height: 4.4rem;
+	filter: invert(1);
+	opacity: 0.32;
+	transition: opacity 0.28s ease;
+}
+
+.snom-principle:hover .snom-principle__icon {
+	opacity: 0.72;
+}
+
+/* nombre primero, número debajo — orden visual invertido */
+.snom-principle__name {
+	font-family: var(--fuenteHeading);
+	font-size: 1.48rem;
+	font-weight: 700;
+	color: var(--blanco);
+	letter-spacing: 0.01em;
+	line-height: 1.25;
+	order: 1;
+}
+
+.snom-principle__num {
+	font-family: var(--fuenteHeading);
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	color: var(--amarillo);
+	opacity: 0.4;
+	order: 2;
+}
+
+/* ── Grid asimétrico: 3 enseñanzas ──────────────────────── */
+
+.snom-extra {
+	max-width: 88rem;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2px;
+}
+
+.snom-extra__stack {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+/* Base de cada pieza — sin cards, sin border-radius, sin gradientes */
+.snom-extra-card {
+	position: relative;
+	padding: 4rem 3.6rem;
+	border: 1px solid rgba(255, 255, 255, 0.07);
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+	transition: background 0.3s ease;
+	cursor: default;
+}
+
+.snom-extra-card:hover {
+	background: rgba(255, 255, 255, 0.025);
+}
+
+/* Pieza destacada: Igualdad — columna izquierda alta */
+.snom-extra-card--feature {
+	justify-content: center;
+}
+
+/* Número como decoración de fondo — enorme, muy sutil */
+.snom-extra-card__num {
+	font-family: var(--fuenteHeading);
+	font-size: clamp(7rem, 10vw, 12rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	color: rgba(255, 255, 255, 0.04);
+	position: absolute;
+	top: 2.4rem;
+	right: 3rem;
+	user-select: none;
+	pointer-events: none;
+	transition: color 0.3s ease;
+}
+
+.snom-extra-card:hover .snom-extra-card__num {
+	color: rgba(246, 234, 0, 0.09);
+}
+
+.snom-extra-card__icon {
+	width: 4.4rem;
+	height: 4.4rem;
+	filter: invert(1);
+	opacity: 0.28;
+	transition: opacity 0.3s ease;
+}
+
+.snom-extra-card:hover .snom-extra-card__icon {
+	opacity: 0.52;
+}
+
+.snom-extra-card__title {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(2.6rem, 3vw, 3.6rem);
+	font-weight: 900;
+	letter-spacing: -0.025em;
+	line-height: 1.05;
+	color: var(--blanco);
+}
+
+.snom-extra-card__desc {
+	margin: 0;
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.42);
+	line-height: 1.8;
+	max-width: 40rem;
+}
+
+/* ── Resumen + Coreano ────────────────────────────────────── */
+
+.snom-summary {
+	position: relative;
+	z-index: 1;
+	max-width: 92rem;
+	margin: 0 auto;
+}
+
+.snom-summary__inner {
+	position: relative;
+	overflow: hidden;
+	padding: 5.6rem 6rem;
+	border-radius: 2.4rem;
+	background: linear-gradient(135deg,
+		rgba(31, 39, 109, 0.32) 0%,
+		rgba(8, 10, 20, 0.7) 50%,
+		rgba(196, 37, 60, 0.14) 100%
+	);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(14px);
+	text-align: center;
+}
+
+/* Watermark de fondo */
+.snom-summary__inner::before {
+	content: "무팔관";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: var(--fuenteHeading);
+	font-size: clamp(10rem, 18vw, 20rem);
+	font-weight: 900;
+	color: rgba(255, 255, 255, 0.018);
+	line-height: 1;
+	white-space: nowrap;
+	pointer-events: none;
+	user-select: none;
+}
+
+.snom-summary__label {
+	display: inline-block;
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.35);
+	padding: 0.5rem 1.8rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 10rem;
+	margin-bottom: 2rem;
+}
+
+.snom-summary__text {
+	margin: 0 0 0.8rem;
+	font-size: 1.8rem;
+	color: rgba(255, 255, 255, 0.55);
+	line-height: 1.5;
+}
+
+.snom-summary__text strong {
+	color: var(--blanco);
+	font-weight: 700;
+}
+
+.snom-summary__phrase {
+	margin: 0 0 4.8rem;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(2.8rem, 4vw, 5rem);
+	font-weight: 900;
+	color: var(--blanco);
+	letter-spacing: -0.025em;
+	line-height: 1.1;
+}
+
+/* Divisor */
+.snom-divider {
+	width: 4rem;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.12);
+	margin: 0 auto 4rem;
+}
+
+/* Bloque coreano */
+.snom-korean {
+	position: relative;
+	z-index: 1;
+}
+
+.snom-korean__label {
+	display: block;
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+	opacity: 0.65;
+	margin-bottom: 2.8rem;
+}
+
+.snom-korean__grid {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
+}
+
+.snom-korean__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.snom-korean__glyph {
+	font-family: var(--fuenteHeading);
+	font-size: 5.6rem;
+	font-weight: 900;
+	color: rgba(255, 255, 255, 0.15);
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+
+.snom-korean__roman {
+	font-family: var(--fuenteHeading);
+	font-size: 1.25rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+	opacity: 0.75;
+}
+
+.snom-korean__text {
+	font-size: 1.3rem;
+	color: rgba(255, 255, 255, 0.3);
+	letter-spacing: 0.04em;
+}
+
+.snom-korean__divider {
+	display: block;
+	width: 1px;
+	height: 6.4rem;
+	background: rgba(255, 255, 255, 0.08);
+	flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+	.snom-extra {
+		grid-template-columns: 1fr;
+	}
+
+	.snom-extra-card--feature {
+		min-height: auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.snom-word {
+		grid-template-columns: 6.4rem 1fr;
+		gap: 0 2rem;
+		padding: 3rem 2rem;
+	}
+
+	.snom-word__icon {
+		display: none;
+	}
+
+	.snom-word__kr {
+		font-size: 6.4rem;
+	}
+
+	.snom-word__roman {
+		font-size: 3.6rem;
+	}
+
+	.snom-principles {
+		flex-wrap: wrap;
+	}
+
+	.snom-principle {
+		flex: 1 1 calc(33.33% - 1px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	.snom-extra {
+		grid-template-columns: 1fr;
+	}
+
+	.snom-extra-card {
+		padding: 3.2rem 2.4rem;
+	}
+
+
+
+	.snom-summary__inner {
+		padding: 4rem 2.8rem;
+	}
+
+	.snom-korean__grid {
+		flex-direction: column;
+		gap: 2.8rem;
+	}
+
+	.snom-korean__divider {
+		width: 4rem;
+		height: 1px;
+	}
+}
+
+@media (max-width: 480px) {
+	.snom-principle {
+		flex: 1 1 calc(50% - 1px);
+	}
+
+	.snom-summary__inner {
+		padding: 3.2rem 2rem;
+	}
+
+	.snom-summary__phrase {
+		font-size: 2.8rem;
+	}
+}
