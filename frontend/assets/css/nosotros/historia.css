@@ -1,0 +1,300 @@
+/* ─── Historia ───────────────────────────────────────────────── */
+
+.hist-section {
+	position: relative;
+	overflow: hidden;
+	padding: 10rem 1.6rem 12rem;
+	background: #0c0f1a;
+}
+
+/* Malla de puntos */
+.hist-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+	background-size: 3.2rem 3.2rem;
+	pointer-events: none;
+}
+
+/* Glow azul — bottom-right */
+.hist-section::after {
+	content: "";
+	position: absolute;
+	bottom: -15%;
+	right: -5%;
+	width: 70rem;
+	height: 70rem;
+	background: radial-gradient(circle, rgba(31, 39, 109, 0.16) 0%, transparent 60%);
+	pointer-events: none;
+}
+
+/* ── Contenedor ─────────────────────────────────────────────── */
+
+.hist-inner {
+	position: relative;
+	z-index: 1;
+	max-width: 122rem;
+	margin: 0 auto;
+}
+
+/* ── Encabezado ─────────────────────────────────────────────── */
+
+.hist-header {
+	margin-bottom: 7.2rem;
+}
+
+.hist-eyebrow {
+	display: block;
+	font-family: var(--fuenteHeading);
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+	opacity: 0.72;
+	margin-bottom: 1.6rem;
+}
+
+.hist-title {
+	margin: 0;
+	font-family: var(--fuenteHeading);
+	font-size: clamp(4rem, 5.5vw, 7.2rem);
+	font-weight: 900;
+	line-height: 1.0;
+	letter-spacing: -0.038em;
+	color: var(--blanco);
+}
+
+.hist-title em {
+	font-style: italic;
+	color: var(--amarillo);
+}
+
+/* ── Layout: foto / timeline ────────────────────────────────── */
+
+.hist-layout {
+	display: grid;
+	grid-template-columns: 38rem 1fr;
+	gap: 9rem;
+	align-items: start;
+}
+
+/* ── Columna visual ─────────────────────────────────────────── */
+
+.hist-visual {
+	position: sticky;
+	top: 10rem;
+}
+
+/* Bloque decorativo desplazado — azul */
+.hist-photo-frame {
+	position: relative;
+}
+
+.hist-photo-frame::after {
+	content: "";
+	position: absolute;
+	bottom: -2.4rem;
+	right: -2.4rem;
+	width: 55%;
+	height: 45%;
+	background: rgba(31, 39, 109, 0.2);
+	border: 1px solid rgba(70, 77, 172, 0.22);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.hist-photo {
+	display: block;
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	object-position: top center;
+	position: relative;
+	z-index: 1;
+	border-left: 3px solid var(--amarillo);
+	filter: grayscale(18%);
+	transition: filter 0.55s ease;
+}
+
+.hist-photo:hover {
+	filter: grayscale(0%);
+}
+
+.hist-founder {
+	margin-top: 2.6rem;
+	padding-left: 1.4rem;
+	border-left: 2px solid rgba(255, 255, 255, 0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.hist-founder__name {
+	font-family: var(--fuenteHeading);
+	font-size: 1.9rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	color: var(--blanco);
+}
+
+.hist-founder__role {
+	font-family: var(--fuenteHeading);
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Columna timeline ───────────────────────────────────────── */
+
+.hist-timeline {
+	padding-top: 0.6rem;
+}
+
+.hist-event {
+	display: grid;
+    align-items: center;
+	grid-template-columns: 12.4rem 1fr;
+	gap: 0 3.4rem;
+	padding: 3.4rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	animation: histSlideIn 0.52s both;
+	animation-delay: calc(var(--ei, 0) * 110ms);
+}
+
+@keyframes histSlideIn {
+	from {
+		opacity: 0;
+		transform: translateX(2rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Año */
+.hist-event__year {
+	font-family: var(--fuenteHeading);
+	font-size: clamp(2.8rem, 3vw, 3.6rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.025em;
+    text-align: center;
+	color: var(--amarillo);
+	padding-top: 0.2rem;
+	flex-shrink: 0;
+	transition: color 0.3s ease;
+}
+
+/* Evento pivote — blanco atenuado, diferenciado del resto */
+.hist-event--pivot .hist-event__year {
+	color: var(--blanco);
+	font-size: clamp(2rem, 2.4vw, 2.8rem);
+	padding-top: 0.6rem;
+	letter-spacing: 0.01em;
+}
+
+/* Cuerpo */
+.hist-event__body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.hist-event__label {
+	font-family: var(--fuenteHeading);
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--amarillo);
+	opacity: 0.65;
+}
+
+.hist-event__text {
+	margin: 0;
+	font-family: var(--fuenteParrafos);
+	font-size: 1.55rem;
+	color: rgba(255, 255, 255, 0.52);
+	line-height: 1.9;
+}
+
+.hist-event__text em {
+	font-style: normal;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Estadística final ──────────────────────────────────────── */
+
+.hist-stat {
+	padding-top: 1rem;
+	display: flex;
+    align-items: center;
+	gap: 3rem;
+	flex-wrap: wrap;
+}
+
+.hist-stat__num {
+	font-family: var(--fuenteHeading);
+	font-size: 6rem;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	color: var(--amarillo);
+}
+
+.hist-stat__label {
+	font-family: var(--fuenteParrafos);
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.4);
+	line-height: 1.8;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .hist-stat__num {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 960px) {
+	.hist-layout {
+		grid-template-columns: 1fr;
+		gap: 5.6rem;
+	}
+
+	.hist-visual {
+		position: static;
+	}
+
+	.hist-photo {
+		aspect-ratio: 4 / 3;
+	}
+
+	.hist-photo-frame::after {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.hist-event {
+		grid-template-columns: 9.6rem 1fr;
+		gap: 0 2rem;
+		padding: 2.8rem 0;
+	}
+
+	.hist-stat {
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.hist-stat__label {
+		max-width: 100%;
+	}
+}
