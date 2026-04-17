@@ -15,6 +15,8 @@ document.addEventListener('click', function(event){
 
     const botonEditar = event.target.closest('.btn-table-edit');
     const botonConfirmar = event.target.closest('.btn-confirmar')
+    const botonEliminar = event.target.closest('.btn-table-delete');
+    const confirmarEliminar = event.target.closest('.btn-eliminarConfirmar');
 
     if (botonEditar){
         const id = botonEditar.dataset.id; // Se obtiene el id del boton editar seleccionado
@@ -28,6 +30,7 @@ document.addEventListener('click', function(event){
             const texto = celda.textContent;
             const tipo = tipos[index] || "text";
 
+            
             celda.innerHTML = `<input type="${tipo}" value="${texto}">`;
             
         });
@@ -53,5 +56,38 @@ document.addEventListener('click', function(event){
         botonConfirmar.textContent = "Editar";
         botonConfirmar.classList.remove('btn-confirmar');
         botonConfirmar.classList.add('btn-table-edit');
+
+        fetch("../../backend/php/editarAlumno.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(objeto)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        });
+    }
+
+    if(botonEliminar){
+        const id = botonEliminar.dataset.id;
+
+        console.log(id); // Debugeamos y verificamos el id
+
+        botonEliminar.textContent = "Confirmar";
+        botonEliminar.classList.remove('btn-table-delete');
+        botonEliminar.classList.add('btn-eliminarConfirmar');
+        
+        return;
+    }
+
+    if(confirmarEliminar){
+        const id = confirmarEliminar.dataset.id;
+        const filaEliminar = confirmarEliminar.closest("tr");
+
+        console.log("Eliminando el ID: ", id);
+
+        filaEliminar.remove();
     }
 });

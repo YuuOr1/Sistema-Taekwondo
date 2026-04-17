@@ -1,3 +1,4 @@
+console.log("CONSULTAR ALUMNOS JS SE EJECUTA");
 
 let alumnosGlobal = [];
 
@@ -46,7 +47,7 @@ function renderTable(lista) {
                 <td>${alumno.sucursal || "Sin empresa"}</td>
                 <td>
                     <button class="btn-table btn-table-edit" data-id = "${alumno.id_alumno}" >Editar</button>
-                    <button class="btn-table btn-table-delete">Eliminar</button>
+                    <button class="btn-table btn-table-delete" data-id = "${alumno.id_alumno}">Eliminar</button>
                 </td>
             </tr>
         `;
@@ -54,17 +55,17 @@ function renderTable(lista) {
     });
 }
 
-// 🔥 FETCH CORRECTO
-fetch("php/obtenerAlumnos.php")
+// FETCH CORRECTO
+fetch("../../backend/php/obtenerAlumnos.php")
     .then(response => response.json())
     .then(data => {
-        console.log("DATOS DESDE BD:", data); // 👈 para debug
+        console.log("DATOS DESDE BD:", data); // 
         alumnosGlobal = data;
         renderTable(data);
     })
     .catch(error => console.error("Error:", error));
 
-// 🔍 BÚSQUEDA CORREGIDA
+// BÚSQUEDA CORREGIDA
 document.querySelector(".btn-search").addEventListener("click", () => {
     const q = document.getElementById("query").value.toLowerCase().trim();
 

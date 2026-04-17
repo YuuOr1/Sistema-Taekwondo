@@ -24,7 +24,7 @@ while($fila = $resultado->fetch_assoc()){
     $alumnos[] = $fila;
 }
 
-// 🔥 IMPORTANTE: indicar que es JSON
+// indicar que es JSON
 header('Content-Type: application/json');
 
 echo json_encode($alumnos);
