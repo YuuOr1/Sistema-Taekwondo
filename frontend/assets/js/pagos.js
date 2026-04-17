@@ -10,15 +10,18 @@ const alumnos = [
 // Historial de pagos por alumno (id -> array de pagos)
 const historialPagos = {
     1: [
+        { tipo: "Anualidad", concepto: "Abril 2026", monto: 3600, fecha: "15/04/2026", metodo: "Tarjeta",      estado: "pagado"    },
         { tipo: "Colegiatura", concepto: "Marzo 2026",   monto: 300, fecha: "01/03/2026", metodo: "Efectivo",      estado: "pagado"    },
         { tipo: "Examen",      concepto: "Feb 2026",     monto: 200, fecha: "08/02/2026", metodo: "Efectivo",      estado: "pagado"    },
     ],
     2: [
+        { tipo: "Uniformes", concepto: "Abril 2026", monto: 500, fecha: "04/04/2026", metodo: "Transferencia",      estado: "pagado"    },
         { tipo: "Colegiatura", concepto: "Marzo 2026",   monto: 350, fecha: "03/03/2026", metodo: "Efectivo",      estado: "pagado"    },
         { tipo: "Examen",      concepto: "Feb 2026",     monto: 250, fecha: "10/02/2026", metodo: "Efectivo",      estado: "pagado"    },
         { tipo: "Colegiatura", concepto: "Febrero 2026", monto: 350, fecha: "05/02/2026", metodo: "Transferencia", estado: "pagado"    },
     ],
     3: [
+        { tipo: "Otro", concepto: "Donacion", monto: 200, fecha: "09/04/2026", metodo: "Efectivo",      estado: "pagado"    },
         { tipo: "Colegiatura", concepto: "Marzo 2026",   monto: 350, fecha: "05/03/2026", metodo: "Transferencia", estado: "pagado"    },
         { tipo: "Examen",      concepto: "Feb 2026",     monto: 250, fecha: "12/02/2026", metodo: "Transferencia", estado: "pagado"    },
     ],
@@ -118,9 +121,13 @@ function renderAlumnos(filtro = "") {
                                 <label>Tipo de pago</label>
                                 <select id="tipo-${a.id}">
                                     <option value="">Seleccionar...</option>
+                                    <option value="Anualidad">Anualidad</option>
                                     <option value="Colegiatura">Colegiatura</option>
                                     <option value="Examen">Examen</option>
                                     <option value="Torneo">Torneo</option>
+                                    <option value="Seminarios">Seminarios</option>
+                                    <option value="Uniformes">Uniformes</option>
+                                    <option value="Otro">Otro</option>
                                 </select>
                             </div>
                             <div class="field-group">
